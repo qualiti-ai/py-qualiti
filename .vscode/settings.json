@@ -1,0 +1,23 @@
+{
+  "python.testing.pytestArgs": ["tests"],
+  "python.defaultInterpreterPath": ".venv/bin/python",
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/*.crswap": true,
+    "**/*.pytest_cache": true,
+    "**/*__pycache__": true
+  },
+  "python.linting.enabled": true,
+  "python.formatting.provider": "none",
+  "workbench.iconTheme": "material-icon-theme",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  }
+}

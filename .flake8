@@ -1,0 +1,12 @@
+[flake8]
+exclude =
+    conftest.py
+    .gitignore
+    .venv
+
+ignore =
+    E501 # ignore line length linting cuz we go WAY past this in this repo
+
+count = true
+statistics = true
+max-line-length = 160

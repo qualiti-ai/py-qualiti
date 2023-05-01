@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "attributer"
+version = "0.1.0"
+description = "Add custom attributes to HTML elements"
+authors = ["Carlos Kidman <ckidman@qualiti.ai>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8.12"
+openai = "^0.27.5"
+python-dotenv = "^1.0.0"
+typer = {version = "^0.8.0", extras = ["all"]}
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.1"
+pytest-cov = "^4.0.0"
+flake8 = "^6.0.0"
+black = "^23.3.0"
+poethepoet = "^0.19.0"
+
+[tool.black]
+line-length = 160
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks]
+test = { "cmd" = "pytest tests --cov=attributer", "help" = "Run all tests and get Code Coverage Report" }

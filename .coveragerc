@@ -1,0 +1,9 @@
+[report]
+show_missing = True
+fail_under = 90
+
+[run]
+omit =
+    conftest.py
+    setup.py
+    *_mock.py
