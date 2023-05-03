@@ -22,21 +22,21 @@ PROMPT = """
 
 
 def testids(input_path: Path, inplace: bool = True) -> Path:
-    """Add data-testid attributes to HTML elements in a file or folder.
+    """Add data-testid attributes to HTML elements in a file or all files in a directory and its subdirectories.
 
     Args:
-        input_path: Path to file or folder to be modified.
-        inplace: If True, will overwrite existing file. If False, will save to a new file.
+        input_path: Path to file or directory to be modified.
+        inplace: If True, will overwrite each existing file. If False, will save to a new file.
 
     Returns:
-        Path to the modified file or folder.
+        Path to the modified file or directory.
     """
     if input_path.is_file():
         return testids_to_file(input_path, inplace)
     elif input_path.is_dir():
         return testids_to_directory(input_path, inplace)
     else:
-        raise typer.BadParameter(f"Path is not to a file or folder: {input_path}")
+        raise typer.BadParameter(f"Path is not to a file or directory: {input_path}")
 
 
 def testids_to_file(input_path: Path, inplace: bool = True) -> Path:
@@ -52,24 +52,13 @@ def testids_to_file(input_path: Path, inplace: bool = True) -> Path:
     typer.secho("\n--\n", fg="bright_yellow")
 
     with display.progress_bar() as progress:
-        task1 = progress.add_task("Read File", total=1)
+        task1 = progress.add_task("(1/3) Read File", total=1)
         code = input_path.read_text()
         progress.update(task1, advance=1)
 
     with display.progress_bar() as progress:
-        task2 = progress.add_task("Gen attrs", total=1)
-        # prompt = f"""
-        #     Given the following code in the backticks ``` below, do the following:
+        task2 = progress.add_task("(2/3) Gen attrs", total=1)
 
-        #     1. Identify all relevant HTML elements
-        #     2. For each element, add ONLY a unique and helpful `data-testid` attribute if it doesn't already have one
-        #     3. Do NOT add any comments or docstrings
-        #     4. Respond with ONLY the new code
-
-        #     ```
-        #     {code}
-        #     ```
-        #     """
         prompt = PROMPT.format(code)
         progress.update(task2, advance=0.33)
 
@@ -81,12 +70,8 @@ def testids_to_file(input_path: Path, inplace: bool = True) -> Path:
         progress.update(task2, advance=1)
 
     with display.progress_bar() as progress:
-        task3 = progress.add_task("Save File", total=1)
-        if inplace:
-            output_path = input_path
-        else:
-            output_path = input_path.parent / f"{input_path.stem}.testids{input_path.suffix}"
-
+        task3 = progress.add_task("(3/3) Save File", total=1)
+        output_path = _set_output_path(input_path, inplace)
         output_path.write_text(completion)
         progress.update(task3, advance=1)
 
@@ -99,7 +84,7 @@ def testids_to_directory(input_path: Path, inplace: bool = True) -> Path:
 
     Args:
         input_path: Path to directory to be modified.
-        inplace: If True, will overwrite existing files. If False, will save to new files.
+        inplace: If True, will overwrite each existing file. If False, will save to new files.
 
     Returns:
         Path to the modified directory.
@@ -108,20 +93,35 @@ def testids_to_directory(input_path: Path, inplace: bool = True) -> Path:
     files = utils.get_all_files_from_directory(input_path)
 
     with display.progress_bar() as progress:
-        task = progress.add_task("Processing Files...", total=len(files))
+        task = progress.add_task("Generating data-testid attributes...", total=len(files))
         for file in files:
             code = file.read_text()
             prompt = PROMPT.format(code)
+
             completion = ai.get_completion(prompt)
             completion = completion.replace("```\n", "")
             completion = completion.replace("```", "")
-            if inplace:
-                output_path = file
-            else:
-                output_path = file.parent / f"{file.stem}.testids{file.suffix}"
 
+            output_path = _set_output_path(file, inplace)
             output_path.write_text(completion)
             progress.update(task, advance=1)
 
     typer.secho("\n--\n", fg="bright_yellow")
     return input_path
+
+
+def _set_output_path(input_path: Path, inplace: bool) -> Path:
+    """Set the output path, for the file to be saved to, based on the input path and the inplace flag.
+
+    Args:
+        input_path: Path to file or directory to be modified.
+        inplace: If True, use the existing file name. If False, make a new file name at the same location.
+
+    Returns:
+        Path to the modified file.
+    """
+    if inplace:
+        output_path = input_path
+    else:
+        output_path = input_path.parent / f"{input_path.stem}.testids{input_path.suffix}"
+    return output_path
