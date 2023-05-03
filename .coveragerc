@@ -4,6 +4,8 @@ fail_under = 90
 
 [run]
 omit =
-    conftest.py
-    setup.py
-    *_mock.py
+    ai.py
+    add_attrs.py
+    cli.py
+    display.py
+

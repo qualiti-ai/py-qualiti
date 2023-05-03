@@ -3,10 +3,7 @@ from pathlib import Path
 import openai
 import typer
 
-from qualiti import add_attrs
-from qualiti import config
-from qualiti import utils
-
+from qualiti import add_attrs, config, utils
 
 app = typer.Typer()
 openai.api_key = config.OPENAI_API_KEY

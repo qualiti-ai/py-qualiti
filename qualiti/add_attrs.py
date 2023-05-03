@@ -2,10 +2,7 @@ from pathlib import Path
 
 import typer
 
-from qualiti import ai
-from qualiti import display
-from qualiti import utils
-
+from qualiti import ai, display, utils
 
 PROMPT = """
     Given the following code in the backticks ``` below, do the following:

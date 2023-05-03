@@ -1,4 +1,4 @@
-from rich.progress import Progress, TextColumn, BarColumn, TaskProgressColumn
+from rich.progress import BarColumn, Progress, TaskProgressColumn, TextColumn
 
 
 def progress_bar() -> Progress:
