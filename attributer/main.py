@@ -1,54 +1,41 @@
-import os
 from pathlib import Path
 
 import openai
-from dotenv import load_dotenv
+import typer
+
+from attributer import add
+from attributer import config
+from attributer import utils
 
 
-load_dotenv()
+app = typer.Typer()
+openai.api_key = config.OPENAI_API_KEY
 
 
-def get_completion(prompt, model="gpt-3.5-turbo"):
-    messages = [{"role": "user", "content": prompt}]
-    response = openai.ChatCompletion.create(
-        model=model,
-        messages=messages,
-        temperature=0,  # this is the degree of randomness of the model's output
-    )
-    return response.choices[0].message["content"]
+@app.command()
+def file(input_path: Path, inplace: bool = True):
+    """Add data-testid attributes to HTML elements in the given file
+
+    $ attributer file index.html
+
+    $ attributer file ./src/Components/Nav.tsx --no-inplace
+    """
+    input_path = utils.validate_file_path(input_path)
+    output_path = add.testids_to_file(input_path, inplace)
+    typer.secho(f"✅ Saved to {output_path}", fg="bright_green")
 
 
-def add_data_testids(input_path: str, output_path: str) -> str:
-    # 1. Read file
-    code = Path(input_path).read_text()
+@app.command()
+def folder(input_path: Path, inplace: bool = True):
+    """! NOT IMPLEMENTED YET ! Add data-testid attributes to HTML elements for each file in the given folder
 
-    # 2 Generate prompt
-    prompt = f"""
-        Given the following code in the backticks ``` below, do the following:
+    $ attributer folder ./src/Home/Nav
 
-        1. Identify all relevant HTML elements
-        2. For each element, add ONLY a unique and helpful `data-testid` attribute if it doesn't already have one
-        3. Do NOT add any comments or docstrings
-        4. Respond with ONLY the new code
-
-        ```
-        {code}
-        ```
-        """
-
-    # 3. Get AI completion
-    completion = get_completion(prompt)
-    completion = completion.replace("```\n", "")
-    completion = completion.replace("\n```", "")
-
-    # 4. Save as new file
-    Path(output_path).write_text(completion)
-
-
-def main():
-    openai.api_key = os.getenv("OPENAI_API_KEY")
-    add_data_testids("./examples/StoreView.tsx", "./examples/StoreView.test.tsx")
+    $ attributer folder ./src/Components --no-inplace
+    """
+    input_path = utils.validate_folder_path(input_path)
+    # add.testids_to_folder(input_path, output_path)
 
 
 if __name__ == "__main__":
-    main()
+    app()
