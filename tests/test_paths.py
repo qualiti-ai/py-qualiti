@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 import typer
 
-from qualiti import add_attrs, utils
+from qualiti import attributer, utils
 
 
 def test_get_all_files_recursively():
@@ -14,10 +14,10 @@ def test_get_all_files_recursively():
 
 def test_set_file_output_path():
     path = Path("examples/StoreView.tsx")
-    output_path = add_attrs._set_output_path(path, inplace=True)
+    output_path = attributer._set_output_path(path, inplace=True)
     assert output_path == path
 
-    output_path = add_attrs._set_output_path(path, inplace=False)
+    output_path = attributer._set_output_path(path, inplace=False)
     assert output_path == Path("examples/StoreView.testids.tsx")
 
 
