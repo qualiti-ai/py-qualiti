@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "attributer"
+name = "qualiti"
 version = "0.1.0"
-description = "Add custom attributes to HTML elements"
+description = "Qualiti.ai Python Tools"
 authors = ["Carlos Kidman <ckidman@qualiti.ai>"]
 
 [tool.poetry.dependencies]
@@ -21,11 +21,11 @@ poethepoet = "^0.19.0"
 line-length = 160
 
 [tool.poetry.scripts]
-attributer = "attributer.main:app"
+qualiti = "qualiti.cli:app"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poe.tasks]
-test = { "cmd" = "pytest tests --cov=attributer", "help" = "Run all tests and get Code Coverage Report" }
+test = { "cmd" = "pytest tests --cov=qualiti", "help" = "Run all tests and get Code Coverage Report" }

@@ -1,0 +1,7 @@
+{
+  "openai_api_key": "",
+  "files": {
+    "glob_pattern": "**/*",
+    "supported": [".html", ".jsx", ".tsx", ".vue"]
+  }
+}
