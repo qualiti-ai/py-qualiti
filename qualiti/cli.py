@@ -22,5 +22,15 @@ def add_testids(input_path: Path, inplace: bool = True):
     typer.secho(f"✅ File(s) saved to: {output_path}", fg="bright_green")
 
 
+@app.command()
+def set_env(key: str, value: str):
+    """Set the given environment variable in your shell's configuration file.
+
+    $ qualiti set-env OPENAI_API_KEY <your-api-key>
+    """
+    utils.set_environment_variable(key, value)
+    typer.secho(f"✅ Environment variable set: {key}={value}", fg="bright_green")
+
+
 if __name__ == "__main__":
     app()

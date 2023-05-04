@@ -1,3 +1,5 @@
+import os
+import platform
 from pathlib import Path
 from typing import List
 
@@ -26,6 +28,44 @@ def get_all_files_from_directory(
     """
     files = [file for file in path.glob(glob) if file.suffix in supported_files]
     return files
+
+
+def set_environment_variable(key: str, value: str) -> None:
+    """Set the given environment variable in the user's shell configuration file.
+
+    Args:
+        key: The name of the environment variable.
+        value: The value of the environment variable.
+    """
+    WINDOWS = "Windows"
+    UNIX = ["Darwin", "Linux"]
+
+    # Set the environment variable in the current session
+    os.environ[key] = value
+
+    # Get the user's shell configuration file
+    if platform.system() == WINDOWS:
+        config_file = os.path.expanduser("~\\AppData\\Local\\Microsoft\\Windows\\PowerShell\\profile.ps1")
+    elif platform.system() in UNIX:
+        shell = os.path.basename(os.environ["SHELL"])
+        if shell == "bash":
+            config_file = os.path.expanduser("~/.bashrc")
+        elif shell == "zsh":
+            config_file = os.path.expanduser("~/.zshrc")
+        else:
+            # Handle other shells here
+            config_file = None
+    else:
+        # Handle other operating systems here
+        config_file = None
+
+    # Append the environment variable to the user's shell configuration file
+    if config_file:
+        with open(config_file, "a") as file:
+            if platform.system() == WINDOWS:
+                file.write(f'\n$env:{key}="{value}"\n')
+            elif platform.system() in UNIX:
+                file.write(f'\nexport {key}="{value}"\n')
 
 
 def validate_path(path: Path) -> Path:

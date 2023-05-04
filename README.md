@@ -16,11 +16,10 @@
     pip install qualiti
     ```
 
-2. Set your `OPENAI_API_KEY`
+2. Set your `OPENAI_API_KEY` Environment Variable. You can use the `qualiti set-env` command:
 
     ```bash
-    # Environment Variable is recommended
-    TODO
+    qualiti set-env OPENAI_API_KEY <your-api-key>
     ```
 
 3. Then start using it
