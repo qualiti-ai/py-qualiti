@@ -9,7 +9,11 @@ from qualiti import attributer, utils
 def test_get_all_files_recursively():
     root_dir = Path("examples")
     file_list = utils.get_all_files_from_directory(root_dir)
-    assert file_list == [Path("examples/StoreView.tsx"), Path("examples/SubComponents/StoreView copy.tsx")]
+    assert file_list == [
+        Path("examples/StoreView.tsx"),
+        Path("examples/plans.component.html"),
+        Path("examples/SubComponents/StoreView copy.tsx"),
+    ]
 
 
 def test_set_file_output_path():

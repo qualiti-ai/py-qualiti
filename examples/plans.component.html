@@ -1,0 +1,96 @@
+<div class="plan-container">
+  <div class="plan-header">
+    <h2>Plans</h2>
+
+    <span class="fill"></span>
+
+    <div class="show-archive-plan-button">
+      <mat-checkbox
+        color="accent"
+        class="plan-toggle"
+        (change)="showArchivePlans($event)"
+        matTooltip="Check to include archived plans"
+      >
+        Include Archived Plans
+      </mat-checkbox>
+    </div>
+
+    <span class="fill"></span>
+
+    <div class="new-plan-button">
+      <button mat-raised-button color="primary" (click)="showAddModal()">
+        <i class="mdi mdi-clock-fast mdi-18px"></i>
+        <span>Add New Plan</span>
+      </button>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="plan-content-wrapper">
+    <custom-dynamic-panels
+      itemName="Plan"
+      [dao]="dao"
+      [edit]="false"
+      [expandedMode]="true"
+    >
+      <ng-container *customDynamicPanelsHeader="let planViewModel">
+        <div class="plan-header-title-wrapper">
+          <a
+            [routerLink]="['/plans/' + planViewModel.plan.id]"
+            class="plan-header-link"
+          >
+            <h4 class="plan-header-title" mat-line>
+              <span class="plan-name">
+                {{ planViewModel.plan.name }}
+                {{
+                  sessionService.isSuper
+                    ? (planViewModel | planProjectInfo : projectsNameMap)
+                    : ""
+                }}
+              </span>
+            </h4>
+          </a>
+        </div>
+
+        <span class="fill"></span>
+      </ng-container>
+
+      <ng-container *customDynamicPanelsContent="let planViewModel">
+        <div class="plan-content">
+          <div class="plan-list">
+            <div
+              class="start-plan-now-button"
+              [matTooltip]="startNowButtonTooltip[planViewModel.id]"
+              [matTooltipDisabled]="!startNowButtonTooltip[planViewModel.id]"
+              matTooltipPosition="above"
+            >
+              <button
+                mat-raised-button
+                color="accent"
+                (click)="startNow(planViewModel.plan)"
+                [disabled]="disableStartNowButton[planViewModel.id]"
+              >
+                <i class="mdi mdi-play"></i>
+                <span> Start Now</span>
+              </button>
+            </div>
+            <div class="plan-toggle-wrapper">
+              <mat-slide-toggle
+                color="accent"
+                class="plan-toggle"
+                [ngModel]="planViewModel.plan.is_enabled"
+                (ngModelChange)="toggleIsEnabled(planViewModel.plan, $event)"
+                [disabled]="planViewModel.plan.archive"
+              >
+                {{
+                  planViewModel.plan.is_enabled ? "Enable Plan" : "Disable Plan"
+                }}
+              </mat-slide-toggle>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </custom-dynamic-panels>
+  </div>
+</div>

@@ -5,7 +5,7 @@ fail_under = 90
 [run]
 omit =
     ai.py
-    add_attrs.py
+    attributer.py
     cli.py
     display.py
 

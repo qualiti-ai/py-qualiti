@@ -6,6 +6,7 @@
 
 - [Installation](#installation)
 - Tools
+  - [Configuration](#configuration)
   - [Attributer](#attributer)
 
 ## Installation
@@ -19,7 +20,7 @@
 2. Set your `OPENAI_API_KEY` Environment Variable. You can use the `qualiti set-env` command:
 
     ```bash
-    qualiti set-env OPENAI_API_KEY <your-api-key>
+    qualiti conf set-env OPENAI_API_KEY <your-api-key>
     ```
 
 3. Then start using it
@@ -27,6 +28,33 @@
     ```bash
     qualiti --help
     ```
+
+## Configuration
+
+This tool allows you to Set and Get key-value pairs in your Environment Variables or the `qualiti.conf.json`.
+
+> 💡 This is shown in Step 2 of the [Installation](#installation) section
+
+### Usage
+
+```bash
+qualiti conf [COMMAND] [OPTIONS]
+```
+
+### Examples
+
+This is helpful if you know that your elements are in specific files. This makes tools like [Attributer](#attributer) faster and cheaper since the AI will only look at files that you care about.
+
+For example, in Angular, you may know that your HTML only exists in these file patters:
+
+- `*.component.ts`
+- `*.component.html`
+
+We can set the `GLOB_PATTERN` value to only look for component files.
+
+```bash
+qualiti conf set-conf GLOB_PATTERN "*.component.*"
+```
 
 ## Attributer
 
@@ -37,7 +65,7 @@ Use AI to auto-add `data-testid` attributes to HTML code.
 ### 🤖 Usage
 
 ```bash
-qualiti add-testids [PATH] [OPTIONS]
+qualiti attr testid [PATH] [OPTIONS]
 ```
 
 > 💡 You can enter a path to a single file or to a directory.
@@ -48,10 +76,10 @@ See [qualiti.conf.json](./qualiti/qualiti.conf.json) for the supported file type
 
 ```bash
 # file
-qualiti add-testids examples/StoreView.tsx
+qualiti attr testid examples/StoreView.tsx
 
 # directory
-qualiti add-testids examples/SubComponents
+qualiti attr testid examples/SubComponents
 ```
 
 ### 🤕 Problem
