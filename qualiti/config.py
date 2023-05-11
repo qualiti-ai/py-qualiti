@@ -123,7 +123,7 @@ def set_conf(key: str, value: str):
 
     $ qualiti conf set-conf GLOB_PATTERN "**/*.component.*"
     """
-    # TODO: Support non-string inputs like lists and dictionaries
+    # TODO: Support non-string values like lists and dictionaries
     set_value(key, value, persist=True)
     typer.secho(f"✅ Config updated: {key}={value}", fg="bright_green")
 

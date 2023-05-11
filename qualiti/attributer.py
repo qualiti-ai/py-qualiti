@@ -4,7 +4,7 @@ import typer
 
 from qualiti import ai, display, utils
 
-PROMPT = """
+TESTID_PROMPT = """
     Given the following code in the backticks ``` below, do the following:
 
     1. Identify all relevant HTML elements
@@ -56,7 +56,7 @@ def testids_to_file(input_path: Path, inplace: bool = True) -> Path:
     with display.progress_bar() as progress:
         task2 = progress.add_task("(2/3) Gen attrs", total=1)
 
-        prompt = PROMPT.format(code)
+        prompt = TESTID_PROMPT.format(code)
         progress.update(task2, advance=0.33)
 
         completion = ai.get_completion(prompt)
@@ -93,7 +93,7 @@ def testids_to_directory(input_path: Path, inplace: bool = True) -> Path:
         task = progress.add_task("Generating data-testid attributes...", total=len(files))
         for file in files:
             code = file.read_text()
-            prompt = PROMPT.format(code)
+            prompt = TESTID_PROMPT.format(code)
 
             completion = ai.get_completion(prompt)
             completion = completion.replace("```\n", "")
@@ -131,13 +131,33 @@ app = typer.Typer()
 def add_testids(input_path: Path, inplace: bool = True):
     """Add data-testid attributes to HTML elements to a file or each file in the given directory and its subdirectories.
 
-    $ qualiti add-testids ./examples/StoreView.tsx
+    $ qualiti attr testid ./examples/StoreView.tsx
 
-    $ qualiti add-testids ./examples/SubComponents
+    $ qualiti attr testid ./examples/SubComponents
     """
     input_path = utils.validate_path(input_path)
     output_path = testids(input_path, inplace)
     typer.secho(f"✅ File(s) saved to: {output_path}", fg="bright_green")
+
+
+# TODO: Enable async in Typer
+@app.command("bing-testid")
+async def bing_add_testids():
+    """Add data-testid attributes to HTML elements to a file or each file in the given directory and its subdirectories.
+
+    $ qualiti attr bing-testid ./examples/StoreView.tsx
+
+    $ qualiti attr bing-testid ./examples/SubComponents
+    """
+    from qualiti import bing
+
+    code = Path("examples/StoryView.tsx").read_text()
+    async with bing.BingChat("qualiti/cookies.json") as bot:
+        response = await bot.ask(prompt=TESTID_PROMPT.format(code), conversation_style="precise")
+
+    completion = bing._extract_code_from_completion(response)
+
+    print(completion)
 
 
 if __name__ == "__main__":
