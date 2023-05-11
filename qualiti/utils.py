@@ -48,7 +48,7 @@ def validate_path(path: Path) -> Path:
         raise typer.BadParameter("Path cannot be None")
     if not path.exists():
         raise typer.BadParameter(f"Path does not exist: {path}")
-    if not path.is_file() and not path.is_dir():  # pragma: no cover
+    if not path.is_file() and not path.is_dir():
         raise FileError(path, hint="Path is not a valid file or directory object")
 
     typer.secho("✅ Path is valid!", fg=typer.colors.BRIGHT_GREEN)

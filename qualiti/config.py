@@ -48,7 +48,7 @@ def set_value(key: str, value: str, persist: bool = False) -> None:
         _set_config(config)
 
 
-def set_environment_variable(key: str, value: str) -> None:  # pragma: no cover
+def set_environment_variable(key: str, value: str) -> None:
     """Set the given environment variable in the user's shell configuration file.
 
     Args:

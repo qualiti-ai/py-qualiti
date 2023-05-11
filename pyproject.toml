@@ -13,7 +13,6 @@ edgegpt = "^0.3.6"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.3.1"
-pytest-cov = "^4.0.0"
 flake8 = "^6.0.0"
 black = "^23.3.0"
 poethepoet = "^0.19.0"
@@ -29,4 +28,4 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poe.tasks]
-test = { "cmd" = "pytest tests --cov=qualiti", "help" = "Run all tests and get Code Coverage Report" }
+test = { cmd = "pytest tests", help = "Run all tests and get Code Coverage Report" }
