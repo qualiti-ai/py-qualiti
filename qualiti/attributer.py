@@ -2,7 +2,8 @@ from pathlib import Path
 
 import typer
 
-from qualiti import ai, display, utils
+from qualiti import ai, bing, display, utils
+from qualiti.async_typer import AsyncTyper
 
 TESTID_PROMPT = """
     Given the following code in the backticks ``` below, do the following:
@@ -124,7 +125,7 @@ def _set_output_path(input_path: Path, inplace: bool) -> Path:
     return output_path
 
 
-app = typer.Typer()
+app = AsyncTyper()
 
 
 @app.command("testid")
@@ -140,8 +141,7 @@ def add_testids(input_path: Path, inplace: bool = True):
     typer.secho(f"✅ File(s) saved to: {output_path}", fg="bright_green")
 
 
-# TODO: Enable async in Typer
-@app.command("bing-testid")
+@app.async_command("bing-testid")
 async def bing_add_testids():
     """Add data-testid attributes to HTML elements to a file or each file in the given directory and its subdirectories.
 
@@ -149,11 +149,9 @@ async def bing_add_testids():
 
     $ qualiti attr bing-testid ./examples/SubComponents
     """
-    from qualiti import bing
-
     code = Path("examples/StoryView.tsx").read_text()
     async with bing.BingChat("qualiti/cookies.json") as bot:
-        response = await bot.ask(prompt=TESTID_PROMPT.format(code), conversation_style="precise")
+        response = await bot.ask(prompt=bing.TESTID_PROMPT.format(code), conversation_style="precise")
 
     completion = bing._extract_code_from_completion(response)
 

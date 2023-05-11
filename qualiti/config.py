@@ -7,6 +7,8 @@ from typing import Dict
 import typer
 from dotenv import load_dotenv
 
+from qualiti.async_typer import AsyncTyper
+
 QUALITI_PATH = Path(__file__).parent
 
 
@@ -86,7 +88,7 @@ def set_environment_variable(key: str, value: str) -> None:
                 file.write(f'\nexport {key}="{value}"\n')
 
 
-app = typer.Typer()
+app = AsyncTyper()
 
 
 @app.command()
