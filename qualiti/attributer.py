@@ -130,7 +130,7 @@ app = AsyncTyper()
 
 @app.command("testid")
 def add_testids(input_path: Path, inplace: bool = True):
-    """Add data-testid attributes to HTML elements to a file or each file in the given directory and its subdirectories.
+    """(OpenAI) Add data-testid attributes to HTML elements to a file or each file in the given directory and its subdirectories.
 
     $ qualiti attr testid ./examples/StoreView.tsx
 
@@ -143,7 +143,7 @@ def add_testids(input_path: Path, inplace: bool = True):
 
 @app.async_command("bing-testid")
 async def bing_add_testids():
-    """Add data-testid attributes to HTML elements to a file or each file in the given directory and its subdirectories.
+    """(Bing) Add data-testid attributes to HTML elements to a file or each file in the given directory and its subdirectories.
 
     $ qualiti attr bing-testid ./examples/StoreView.tsx
 

@@ -6,6 +6,7 @@ exclude =
 
 ignore =
     E501 # ignore line length linting cuz we go WAY past this in this repo
+    E203 # ignore whitespace before ':'
 
 count = true
 statistics = true

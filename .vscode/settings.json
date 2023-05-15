@@ -19,5 +19,6 @@
   "workbench.iconTheme": "material-icon-theme",
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
-  }
+  },
+  "flake8.args": ["--rcfile=.flake8"]
 }
