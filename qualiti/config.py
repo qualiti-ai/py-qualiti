@@ -44,6 +44,9 @@ def set_value(key: str, value: str, persist: bool = False) -> None:
         value: The value to set.
         persist: Whether to update the value to the config file permanently.
     """
+    if value.startswith("[") and value.endswith("]"):
+        value = [s.strip() for s in value[1:-1].split(",")]
+
     config[key] = value
 
     if persist:
@@ -124,8 +127,10 @@ def set_conf(key: str, value: str):
     """Set the given key and value in qualiti.conf.json.
 
     $ qualiti conf set-conf GLOB_PATTERN "**/*.component.*"
+
+    $ qualiti conf set-conf SUPPORTED_FILES "[.html, .jsx]"
     """
-    # TODO: Support non-string values like lists and dictionaries
+    # TODO: Support dictionaries
     set_value(key, value, persist=True)
     typer.secho(f"✅ Config updated: {key}={value}", fg="bright_green")
 
