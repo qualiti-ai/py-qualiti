@@ -7,6 +7,14 @@ from click.exceptions import FileError
 from qualiti import config
 
 
+def extract_code_from_completion(completion: str, code_block_seperator="```") -> str:
+    # ["```", code, "```"] => [1] is just the code
+    completion = completion.split(code_block_seperator)[1]
+    if completion.startswith("\n"):
+        completion = completion[1:]
+    return completion
+
+
 def get_all_files_from_directory(
     path: Path,
     glob: str = None,

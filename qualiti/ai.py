@@ -27,7 +27,7 @@ def get_completion(prompt: str, model="gpt-3.5-turbo", temperature=0) -> str:
     return response.choices[0].message["content"]
 
 
-async def get_bing_completion(prompt: str, cookies_path: str) -> str:
+async def get_bing_completion(prompt: str, cookies_path: str = None) -> str:
     """Get AI completion for a prompt using Bing's Chatbot.
 
     * Please use good Prompt Engineering practices to ensure the best results.
@@ -35,7 +35,7 @@ async def get_bing_completion(prompt: str, cookies_path: str) -> str:
 
     Args:
         prompt: The prompt to be completed.
-        cookies_path: The path to the cookies.json file for your Bing Chatbot.
+        cookies_path: The path to the cookies.json file for your Bing Chatbot (not required)
 
     Returns:
         The AI's completion of the prompt.

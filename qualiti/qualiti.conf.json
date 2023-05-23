@@ -1,10 +1,6 @@
 {
   "OPENAI_API_KEY": "",
+  "BING_COOKIES_PATH": "",
   "GLOB_PATTERN": "**/*",
-  "SUPPORTED_FILES": [
-    ".html",
-    ".jsx",
-    ".tsx",
-    ".vue"
-  ]
+  "SUPPORTED_FILES": [".html", ".jsx", ".tsx", ".vue"]
 }
