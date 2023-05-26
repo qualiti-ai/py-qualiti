@@ -20,7 +20,7 @@ TESTID_PROMPT = """
 """
 
 
-async def testids(input_path: Path, inplace: bool = True, model: str = "gpt-3.5.turbo") -> Path:
+def testids(input_path: Path, inplace: bool = True, model: str = "gpt-3.5-turbo") -> Path:
     """Add data-testid attributes to HTML elements in a file or all files in a directory and its subdirectories.
 
     Args:
@@ -32,14 +32,14 @@ async def testids(input_path: Path, inplace: bool = True, model: str = "gpt-3.5.
         Path to the modified file or directory.
     """
     if input_path.is_file():
-        return await testids_to_file(input_path, inplace, model)
+        return testids_to_file(input_path, inplace, model)
     elif input_path.is_dir():
-        return await testids_to_directory(input_path, inplace, model)
+        return testids_to_directory(input_path, inplace, model)
     else:
         raise typer.BadParameter(f"Path is not to a file or directory: {input_path}")
 
 
-async def testids_to_file(input_path: Path, inplace: bool = True, model: str = "gpt-3.5-turbo") -> Path:
+def testids_to_file(input_path: Path, inplace: bool = True, model: str = "gpt-3.5-turbo") -> Path:
     """Add data-testid attributes to HTML elements in a file.
 
     Args:
@@ -63,7 +63,7 @@ async def testids_to_file(input_path: Path, inplace: bool = True, model: str = "
         prompt = TESTID_PROMPT.format(code)
         progress.update(task2, advance=0.33)
 
-        completion = (await ai.get_bing_completion(prompt)) if model.lower() == "bing" else ai.get_completion(prompt, model=model)
+        completion = ai.get_completion(prompt, model=model)
         progress.update(task2, advance=0.66)
 
         code = utils.extract_code_from_completion(completion)
@@ -79,7 +79,7 @@ async def testids_to_file(input_path: Path, inplace: bool = True, model: str = "
     return output_path
 
 
-async def testids_to_directory(input_path: Path, inplace: bool = True, model: str = "gpt-3.5-turbo") -> Path:
+def testids_to_directory(input_path: Path, inplace: bool = True, model: str = "gpt-3.5-turbo") -> Path:
     """Add data-testid attributes to HTML elements in every file of the given directory and its subdirectories.
 
     Args:
@@ -99,7 +99,7 @@ async def testids_to_directory(input_path: Path, inplace: bool = True, model: st
             code = file.read_text()
             prompt = TESTID_PROMPT.format(code)
 
-            completion = (await ai.get_bing_completion(prompt)) if model.lower() == "bing" else ai.get_completion(prompt, model=model)
+            completion = ai.get_completion(prompt, model=model)
             code = utils.extract_code_from_completion(completion)
 
             output_path = _set_output_path(file, inplace)
@@ -130,18 +130,18 @@ def _set_output_path(input_path: Path, inplace: bool) -> Path:
 app = AsyncTyper()
 
 
-@app.async_command("testid")
-async def add_testids(input_path: Path, inplace: bool = True, model: str = "gpt-3.5-turbo"):
+@app.command("testid")
+def add_testids(input_path: Path, inplace: bool = True, model: str = "gpt-3.5-turbo"):
     """Add data-testid attributes to HTML elements in a file or each file in the given directory and its subdirectories.
 
-    * model should be "gpt-3.5-turbo" or "bing"
+    * Default: "gpt-3.5-turbo", but can use "gpt-4" if you have access
 
     $ qualiti attr testid ./examples/StoryView.tsx
 
-    $ qualiti attr testid ./examples/SubComponents --model "bing"
+    $ qualiti attr testid ./examples/SubComponents --model "gpt-4"
     """
     input_path = utils.validate_path(input_path)
-    output_path = await testids(input_path, inplace, model)
+    output_path = testids(input_path, inplace, model)
     typer.secho(f"✅ File(s) saved to: {output_path}", fg="bright_green")
 
 

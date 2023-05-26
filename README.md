@@ -14,7 +14,6 @@
 This project currently supports these models and providers, but you must have access to them:
 
 - OpenAI (`gpt-3.5-turbo` is the default model)
-- BingChat (free!)
 
 1. Install `qualiti` with your favorite package manager:
 
@@ -28,29 +27,13 @@ This project currently supports these models and providers, but you must have ac
 
     ---
 
-    Set your `OPENAI_API_KEY` Environment Variable. You can use the `qualiti set-env` command:
+    Set your `OPENAI_API_KEY` Environment Variable. You can use the `qualiti set-env` command if needed:
 
     ```bash
     qualiti conf set-env OPENAI_API_KEY <your-api-key>
     ```
 
-    **BingChat**
-
-    ---
-
-    Rate Limits:
-    - 20 Chats per Session
-    - 200 Chats per day
-
-    USING COOKIES IS OPTIONAL! You can skip this step and start using BingChat immediately.
-
-    > 💡 [EdgeGPT](https://github.com/acheong08/EdgeGPT) uses cookies to authenticate, but this is auto-handled
-
-    1. Install the Edge Browser if not already installed
-    2. Open Edge and install the [Cookie-Editor](https://microsoftedge.microsoft.com/addons/detail/cookieeditor/neaplmfkghagebokkhpjpoebhdledlfi?hl=en-US) extension
-    3. Navigate to [bing.com/chat](https://bing.com/chat) (you must have access to BingChat to use it)
-    4. Open `Cookie-Editor`, click `Export`, then click `Export as JSON`
-    5. Save the JSON file and note the file path
+    > 💡 You can also use a `.env` file or manage Environment Variables your own way!
 
 3. Then start using `qualiti` in the CLI or as a package in your project:
 
@@ -66,11 +49,7 @@ This project currently supports these models and providers, but you must have ac
     """
 
     openai_response = ai.get_completion(PROMPT.format("pirate"))
-
-    bing_response = await ai.get_bing_completion(PROMPT.format("chicken"))
     ```
-
-> 🤔 Observe that using Bing requires `aync/await`
 
 ## Configuration
 
@@ -117,7 +96,13 @@ qualiti attr testid [PATH] [OPTIONS]
 
 If `PATH` is a directory, it will recursively look for ***all supported files*** in that directory and its subdirectories.
 
-See [qualiti.conf.json](./qualiti/qualiti.conf.json) for the supported file types 👀
+See [qualiti.conf.json](./qualiti/qualiti.conf.json) for the default supported file types 👀
+
+You can update this list using `set-conf`:
+
+```bash
+qualiti conf set-conf SUPPORTED_FILES "[.html, .tsx]"
+```
 
 ```bash
 # file
@@ -144,7 +129,7 @@ Ideally, developers would design their UI and components with these attributes i
 
 Using AI, we can do all 3 steps automatically!
 
-1. They provide the file(s) like a `filename.tsx` or a folder like `/Components`
+1. Provide the file(s) like a `filename.tsx` or a folder like `/Components`
 2. AI adds a `data-testid` to each relevant element
 3. The new file is saved and can now be compared to the original in case the dev wants to make any changes
 
@@ -155,5 +140,4 @@ Using AI, we can do all 3 steps automatically!
 See [attributer.py](/qualiti/attributer.py) for the prompt and commands used.
 
 - OpenAI ain't free, so be cognizant of how many files you target since each file will invoke the AI
-- Using Bing is free but will be a tad slower, may require a different PROMPT, and currently has a limit of 200 chats per day (aka 200 files per day)
 - Use `git` so you get a diff before you push the updated files.
