@@ -89,8 +89,6 @@ qualiti conf set-conf GLOB_PATTERN "*.component.*"
 
 ## Attributer
 
----
-
 Use AI to auto-add `data-testid` attributes to HTML code.
 
 ### 🤖 Usage
