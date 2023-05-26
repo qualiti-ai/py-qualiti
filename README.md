@@ -4,10 +4,17 @@
 
 > This package provides easy-to-use tools that can benefit developers and testers! Just take a look below to see what's available.
 
+- [Requirements](#requirements)
 - [Installation](#installation)
 - Tools
   - [Configuration](#configuration)
   - [Attributer](#attributer)
+
+## Requirements
+
+- 🐍 Python `3.8.12` or higher
+- 🔑 Access to OpenAI via API Key
+- 📦 [Poetry](https://python-poetry.org/) as package manager if you are contributing
 
 ## Installation
 
