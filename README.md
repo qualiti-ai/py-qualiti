@@ -109,6 +109,8 @@ You can update this list using `set-conf`:
 qualiti conf set-conf SUPPORTED_FILES "[.html, .tsx]"
 ```
 
+Examples:
+
 ```bash
 # file
 qualiti attr testid examples/StoryView.tsx
