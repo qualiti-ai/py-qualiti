@@ -42,7 +42,7 @@ This project currently supports these models and providers, but you must have ac
     qualiti conf set-env OPENAI_API_KEY <your-api-key>
     ```
 
-    > 💡 You can also use a `.env` file or manage Environment Variables your own way!
+    > 💡 You can also use a `.env` file or manage Environment Variables your own way! Use the [example.env](/example.env) template as an example
 
     **🤗 HuggingFace**
 
@@ -53,6 +53,8 @@ This project currently supports these models and providers, but you must have ac
     ```bash
     qualiti conf set-env HUGGINGFACE_ACCESS_TOKEN <your-access-token>
     ```
+
+    💡 Make sure to `source` the config file or restart the Terminal to register the changes
 
 3. Then start using `qualiti` in the CLI or as a package in your project:
 
