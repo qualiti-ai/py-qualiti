@@ -1,6 +1,6 @@
 {
   "OPENAI_API_KEY": "",
-  "BING_COOKIES_PATH": "",
+  "HUGGINGFACE_ACCESS_TOKEN": "",
   "GLOB_PATTERN": "**/*",
   "SUPPORTED_FILES": [".html", ".jsx", ".tsx", ".vue"]
 }

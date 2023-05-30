@@ -12,7 +12,6 @@ TESTID_PROMPT = """
     1. Identify all relevant HTML elements
     2. For each element, add ONLY a unique and helpful `data-testid` attribute if it doesn't already have one
     3. Do NOT add any comments or docstrings
-    4. Respond with ONLY the new code surrounded by ```
 
     ```
     {0}
@@ -63,7 +62,7 @@ def testids_to_file(input_path: Path, inplace: bool = True, model: str = "gpt-3.
         prompt = TESTID_PROMPT.format(code)
         progress.update(task2, advance=0.33)
 
-        completion = ai.get_completion(prompt, model=model)
+        completion = ai.get_code(prompt, model=model)
         progress.update(task2, advance=0.66)
 
         code = utils.extract_code_from_completion(completion)
@@ -99,7 +98,7 @@ def testids_to_directory(input_path: Path, inplace: bool = True, model: str = "g
             code = file.read_text()
             prompt = TESTID_PROMPT.format(code)
 
-            completion = ai.get_completion(prompt, model=model)
+            completion = ai.get_code(prompt, model=model)
             code = utils.extract_code_from_completion(completion)
 
             output_path = _set_output_path(file, inplace)

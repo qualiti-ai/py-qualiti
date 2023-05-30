@@ -1,0 +1,781 @@
+Test ID,Summary,Idea,Preconditions,Steps to reproduce,Expected Result,Actual Result,Pass/Fail,Bug #,Author,Area
+1,Verify first name is required,Need to be identified when using the app,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Click the first name
+- Delete the first name 
+- Click ‘save changes’","- underline should be highlighted red and the words ‘this field is required should be displayed in red as well
+",,Pass,,Rock,New Account
+2,Verify last name is required,Need to be identified when using the app,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Click the last name
+- Delete the last name 
+- Click ‘save changes’","- underline should be highlighted red and the words ‘this field is required should be displayed in red as well
+",,Pass,,Rock,New Account
+3,Verify email is required,Need to be able to contact user while using the app,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Click the email address
+- Delete the email address
+- Click ‘save changes’","- underline should be highlighted red and the words ‘this field is required should be displayed in red as well
+",,Pass,,Rock,New Account
+4,Verify the user cannot select that they were born 'on 'today's date',Need accurate age information for the user,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Click the date of birth",- Date does not save as the birth date and is not accepted,,Fail,LINGD-359,Rock,New Account
+5,Verify additonal options display when help learning language is requested in settings,Additonal informaiton may prove helpful in the future dealing with the user,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Click the ‘language practice’ button which is below language proficiency button
+- Select ‘yes, I need language practice’","- Additonal information is requested including date od birth, gender, etc.",,Pass,,Rock,New Account
+6,Verify ‘Intro’ is optional,"The app says it's optional, need to remain accurate","PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Select ‘yes, I need language practice’  in the “language practice” section
+- Erase any potential verbiage from the “intro” section (make sure it’s blank)
+- Click ‘save changes’",- User is able to proceed with this field left blank,,Fail,LINGD-353,Rock,New Account
+7,Verify ‘Profession’ is optional,"The app says it's optional, need to remain accurate","PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Select ‘yes, I need language practice’  in the “language practice” section
+- Erase any potential verbiage from the “Profession” section (make sure it’s blank)
+- Click ‘save changes’",- User is able to proceed with this field left blank,,Pass,,Rock,New Account
+8,Verify ‘Areas of interest and hobby’ is optional,"The app says it's optional, need to remain accurate","PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Select ‘yes, I need language practice’  in the “language practice” section
+- Erase any potential verbiage from the “Areas of interest” section (make sure it’s blank)
+- Click ‘save changes’",- User is able to proceed with this field left blank,,Pass,,Rock,New Account
+9,Verify 'subscriptions' button displays subscription options on the app,User needs access to pay for more options in the software,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Scroll to the bottom and click the blue ‘subscriptions’ button ",- User is shown sbscription options,,Pass,,Rock,New Account
+10,Verify the 'log out' button is functional,User needs to be able to properly log out using in-app functionality,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Scroll to the bottom and click the blue ‘LOG OUT’ button 
+- When prompted to confirm the log out, click ‘yes’",- User is logged out and taken back to the log in page of the app,,Pass,,Rock,Login
+11,Verify profile picture saves once selected,Helps with user's personal experience on the app as well as identification,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Click the grey camera icon in the top right corner
+- Select ‘gallery’ and choose a picture from your current gallery photos",- User should be taken to the 'profile' page and the selected photo should reflect as their profile photo,,Pass,,Rock,Account
+12,Verify the user can take a new photo for their profile avatar using the in-app camera button functionality,User should not have to exit the app to complete this task,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Click the grey camera icon in the top right corner
+- Select ‘take a photo’
+- Take a photo
+- Save the photo",- User should be taken to the 'profile' page and the new photo should reflect as their profile photo,,Pass,,Rock,Account
+13,Verify the 'delete account' button does delete the currently existing account,User should be able to complete this task without contacing the company,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Click red ‘delete account’ button all the way at the bottom
+- When prompted, select ‘yes’ to confirm the account deletion",- The account should be deleted,,Pass,,Rock,Account
+14,Verify the language proficiency can be changed as progress is made in the users learning process,User and app need to be able to track progress and efficiency,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Click the ‘Language proficiency’ section
+- Select a new level of proficiency (not different than whatever it was on)",- New proficiency level should be reflected on the profile,,Pass,,Rock,Account
+15,Verify areas of interest add on as more are selected,Helps with user's personal experience on the app,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Click the ‘areas of interest’ section at the bottom, above the ‘change password’ button
+- Add new areas of interest by searching the name, and clicking it (at least 2)","- This section should show all areas of interest added, not just one",,Pass,,Rock,Account
+16,Verify the description of the 'one year' subscription is displayed when the one year plan is selected,user should be properly educated prior to enrolling,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Scroll to the bottom and click the blue ‘subscriptions’ button 
+- Click the ‘one year’ option",- User is shown one year subscription details,,Pass,,Rock,Subscription
+17,Verify the description of the 'one month' subscription is displayed when the one year plan is selected,user should be properly educated prior to enrolling,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Scroll to the bottom and click the blue ‘subscriptions’ button 
+- Click the ‘one month’ option",- User is shown one month subscription details,,Pass,,Rock,Subscription
+18,Verify the user is able to change the country they're located in,User may move to a new country and should be able to adjust this in the app,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Scroll to the ‘Country’ section and click the button showing your country
+- Change your country of residence
+- Click to save changes",- App should reflect user's current country of residence,,Fail,LINGD-354,Rock,Account
+19,Verify user is able to update the email address,User should be able to adjust their point of contact in the app,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Scroll to the ‘Email’ section and click the button showing the email address
+- Change the email
+- Click to save changes",- App should the user's new email address,,Pass,,Rock,Account
+20,Verify the 'gender' option is availble for adjustment in the profile section,User's may mistakenly selct one gender and need to adjust it in the app later,"PRECONDITION: 
+- Be on Boop mobile app
+- Have a valid account created already
+- Be signed in","- Click the menu button in the top left
+- Click the ‘profile’ button which is in the settings section, 3rd button down (in that section)
+- Scroll to the ‘language proficiency’ section and click the button 
+- Locate the gender options
+- Select a different gender option than previously selected",- App should reflect the newly selected gender preference,,Pass,LINGD-350,Rock,Account
+21,Verify user can create an account,,"1. App is installed on mobile device
+2. App is open and user is not registered/signed up
+3. Opening page is ""Login""","1. Scroll all the way to the bottom and click on CREATE ACCOUNT
+2. Enter all required information for registration
+3. Tap blue SIGN UP tab 
+4. Verify email address to complete registration",The user will have an account with Boop,The user has an account with Boop,Pass,,Camel,New Account
+22,Verify user can sign in with created account,,"1. App is installed on mobile device
+2. App is open and the user is registered
+3. Opening page is ""Login""","1. Enter correct email and password
+2. Tap blue SIGN IN tab",The user is signed in to the app,The user is unable to login and stays on the same page,Fail,LINGD-324,Camel,Login
+23,"Verify user can sign in after ""forgot password"" change",,"1. App is installed on mobile device
+2. App is open and the user is registered
+3. Opening page is ""Login""
+4. User changed to a new password","1. Enter correct email address and new password
+2. Tap blue SIGN IN button",The user is signed in to the app,The user is unable to login and stays on the same page,Fail,LINGD-334,Camel,Login
+24,Verify user can sign in with Facebook,,"1. App is installed on mobile device
+2. App is open and the user is registered
+3. Opening page is ""Login""","1. Tap on the blue Facebook tab
+2. Tap ""Continue"" option to allow ""Boop DEV"" to use ""facebook.com"" to sign in
+3. Tap bold blue ""Open"" option to open the app in Facebook 
+4. Tap the blue ""Continue"" tab  to complete login to Facebook",The user is signed in to the app,The user is able to login using Facebook,Pass,,Camel,Login
+25,Verify user can sign in with Google,,"1. App is installed on mobile device
+2. App is open and the user is registered
+3. Opening page is ""Login""","1. Tap on the white Google tab
+2. Tap ""Continue"" option to allow ""Boop DEV"" to use ""google.com"" to sign in
+3. Tap correct email option to open the app in Google",The user is signed in to the app,The user is able to login using Google,Pass,,Camel,Login
+26,Verify user can sign in with Apple,,"1. Have a fingerprint for ""Apple ID Touch ID""
+2. App is installed on mobile device
+3. App is open and the user is registered
+4. Opening page is ""Login","1. Tap on the black Apple tab
+2. Use ""Apple ID Touch ID"" fingerprint on thumb pad on iPhone SE",The user is signed in to the app,The user is able to login using Apple,Pass,,Camel,Login
+27,"Verify user can select ""Knowledge base"" option in sandwich menu",,"1. App is installed on mobile device
+2. App is open and the user is registered and logged in
+3. The first page seen is the ""Knowledge base""","1. Tap the left pointing arrow at the top left of the page
+2. Tap the sandwich menu on the top left of the page
+3. Tap the ""Knowledge base"" selection","The user is redirected to the ""Knowledge base""","The user is able to select and enter the ""Knowledge base"" tab",Pass,,Camel,Navigation
+28,"Verify user can tap ""Your data"" tabs in ""Knowledge base""",,"1. App is installed on mobile device
+2. App is open and the user is registered and logged in
+3. The user is inside the ""Knowledge base""","1. Tap all three ""Your data"" tabs",All three tabs direct user to the corresponding repository,All three tabs direct user to the corresponding repository,Pass,,Camel,Navigation
+29,"Verify user can tap ""Boop data"" tabs in ""Knowledge base""",,"1. App is installed on mobile device
+2. App is open and the user is registered and logged in
+3. The first page seen is the ""Knowledge base""","1. Tap on several ""Boop data"" tabs that do not require a subscription",All tabs that don't require a subscription redirect user to the corresponding repository,All tabs that don't require a subscription redirect user to the corresponding repository,Pass,,Camel,Navigation
+30,Verify user is redirected to subscription prompt after tapping on tabs requiring subscription,,"1. App is installed on mobile device
+2. App is open and the user is registered and logged in
+3. The first page seen is the ""Knowledge base""","1. Tap on several ""Boop data"" tabs that require a subscription",All tabs that require a subscription redirect user to a subscription prompt,All tabs that require a subscription redirect user to a subscription prompt,Pass,,Camel,Navigation
+31,"Verify ""+"" redirects user to add card page after tapping",,"1. App is installed on mobile device
+2. App is open and the user is registered and logged in
+3. The user has tapped a tab from ""Your data"" or ""Boop data"" in ""Knowledge base""","1. Tap the ""+"" in the blue circle at the bottom right of the page","User is redirected to the ""Creating new card"" page","User is redirected to the ""Creating new card"" page",Pass,,Camel,Navigation
+32,"Verify user can select ""Subscription"" in sandwich menu",,"1. App is installed on mobile device
+2. App is open and the user is registered and logged in
+3. The user taps the back arrow at the top left of ""Knowledge base"" page","1. Tap the sandwich menu at the top left of page
+2. Tap on the ""Subscription"" selection",User is redirected to information about subscription and blue SUBSCRIBE MONTHLY and SUBSCRIBE ANNUAL tabs,User is redirected to information about subscription and blue SUBSCRIBE MONTHLY and SUBSCRIBE ANNUAL tabs,Pass,,Camel,Navigation
+33,Verify user can tap SUBSCRIBE MONTHLY tab,,"1. App is installed on mobile device
+2. App is open and the user is registered and logged in
+3. The user taps the back arrow at the top left of ""Knowledge base"" page","1. Tap the sandwich menu at the top left of page
+2. Tap on the ""Subscription"" selection
+3. Tap on the blue SUBSCRIBE MONTHLY tab",Subscription prompt appears with corresponding price,Subscription prompt appears with corresponding price,Pass,,Camel,Navigation
+34,Verify user can tap SUBSCRIBE ANNUAL tab,,"1. App is installed on mobile device
+2. App is open and the user is registered and logged in
+3. The user taps the back arrow at the top left of ""Knowledge base"" page","1. Tap the sandwich menu at the top left of page
+2. Tap on the ""Subscription"" selection
+3. Tap on the blue SUBSCRIBE ANNUAL tab",Subscription prompt appears with corresponding price,Subscription prompt appears with corresponding price,Pass,,Camel,Navigation
+35,Verify user can close subscription prompt,,"1. App is installed on mobile device
+2. App is open and the user is registered and logged in
+3. The user taps the back arrow at the top left of ""Knowledge base"" page","1. Tap the sandwich menu at the top left of page
+2. Tap on the ""Subscription"" selection
+3. Tap on the blue SUBSCRIBE ANNUAL or SUBSCRIBE MONTHLY tab
+4. Tap ""x"" in top right corner of the subscription prompt",Subscription prompt closes,The user is unable to exit the subscription prompt and the app crashes after freezing while loading,Fail,LINGD-333,Camel,Navigation
+36,"Verify user can select ""Player"" in sandwich menu settings",,"1. App is installed on mobile device
+2. App is open and the user is registered and logged in
+3. The user taps the back arrow at the top left of ""Knowledge base"" page
+4. Tap sandwich menu at top left of page","1. Tap ""Player"" selection in menu settings","The ""Player"" settings appear","The ""Player"" settings appear",Pass,,Camel,Navigation
+37,"Verify ""Sound first"" setting can be changed",,"1. App is installed on mobile device
+2. App is open and the user is registered and logged in
+3. The user taps the back arrow at the top left of ""Knowledge base"" page
+4. Tap sandwich menu at top left of page
+5. Tap ""Player"" in menu settings","1. Tap ""Sound first"" selection
+2. Change the setting by tapping on it
+3. Tap outside of the setting selection box to see if the setting changed","The setting that was changed is reflected under ""Sound first""","The setting that was changed is reflected under ""Sound first""",Pass,,Camel,Settings
+38,"Verify ""Number of words repetitions"" setting can be changed",,"1. App is installed on mobile device
+2. App is open and the user is registered and logged in
+3. The user taps the back arrow at the top left of ""Knowledge base"" page
+4. Tap sandwich menu at top left of page
+5. Tap ""Player"" in menu settings","1. Tap ""Number of words repetitions"" selection
+2. Change the value by tapping on it
+3. Tap outside of the setting selection box to see if the setting changed","The setting that was changed is reflected under ""Number of words repetitions""","The setting that was changed is reflected under ""Number of words repetitions""",Pass,,Camel,Settings
+39,"Verify ""Number of translations repetitions"" setting can be changed",,"1. App is installed on mobile device
+2. App is open and the user is registered and logged in
+3. The user taps the back arrow at the top left of ""Knowledge base"" page
+4. Tap sandwich menu at top left of page
+5. Tap ""Player"" in menu settings","1. Tap ""Number of translations repetitions"" selection
+2. Change the setting by tapping on it
+3. Tap outside of the setting selection box to see if the setting changed","The setting that was changed is reflected under ""Number of translations repetitions"" ","The setting that was changed is reflected under ""Number of translations repetitions"" ",Pass,,Camel,Settings
+40,Verify user can RESTORE DEFAULT VALUES,,"1. App is installed on mobile device
+2. App is open and the user is registered and logged in
+3. The user taps the back arrow at the top left of ""Knowledge base"" page
+4. Tap sandwich menu at top left of page
+5. Tap ""Player"" in menu settings",1. Tap the blue RESTORE DEFAULT VALUES at the bottom of the page,The default values are restored for all player settings,The default values are restored for all player settings,Pass,,Camel,Settings
+41,Verify that existing profile image can be changed,User can upload/change profile image,"1. User is logged into their Boop account
+2. Make sure there is an existing profile image","1. Tap on the sandwich menu icon on the top left corner
+2. Tap ""Profile"" under ""Settings""
+3. Tap on the camera icon on the top right corner
+4. Tap on either ""Gallery"" or ""Take a photo"" to change existing profile image",Selected image should upload to user's profile,,,,Paper,Account
+42,Verify that password can be changed to a New password,User has the option to change their password,1. User is logged into their Boop account,"1. Tap on the sandwich menu icon on the top left corner
+2. Tap ""Profile"" under ""Settings""
+3. Tap the ""Change Password"" button
+4. Type in a New password
+5. Tap the ""Save Changes"" button
+6. Log out and log back in with New password",New password is updated and saved,,,,Paper,Account
+43,"Verify that ""Contact Us"" sends an email to support",User is able to send feedback to Boop's support team,1. User is logged into their Boop account,"1. Tap on the sandwich menu icon on the top left corner
+2. Tap ""Contact Us"" under ""Information""
+3. (Optional) create email with feedback
+4. (Optional) change email address in the ""To"" field to a testing email address
+5. Send email",User can successfully send an email to the Boop's support team,,,,Paper,Customer Support
+44,Verify user can logout,User has the option to logout of their account,1. User is logged into their Boop account,"1. Tap on the sandwich menu icon on the top left corner
+2. Tap ""Log out"" under ""Information""
+3. Tap ""Yes"" on the ""Are you sure to log out?"" overlay",User is logged out successfully,,,,Paper,Login
+45,Verify user can share Boop.com,"User can share the Boop link through email, messages or any social platform",1. User is logged into their Boop account,"1. Tap on the sandwich menu icon on the top left corner
+2. Tap on ""Share"" under ""Information""
+3. Select a sharing option like ""Messages""
+4. Select a contact on your phone
+5. Send message",The Boop link is sent successfully to user's selected contact,,,,Paper,Sharing
+46,"Verify user can access ""Boop data"" options in ""Knowledge base""","User is able to select from the ""Boop data"" options ",1. User is logged into their Boop account,"1. Tap on the sandwich menu icon on the top left corner
+2. Tap on ""Knowledge base""","A listion of option should display under ""Boop data""",,,,Paper,Navigation
+47,"Verify that ""Date of birth"" can be changed",User is able to edit their date of birth,1. User is logged into their Boop account,"1. Tap on the sandwich menu icon on the top left corner 
+2. Tap on ""Profile"" under ""Settings"" 
+3. Tap on ""Date of birth""
+4. Change date of birth 
+5. Tap on ""Save Changes"" ","""Date of birth"" is updated and saved on user's account",,,,Paper,Account
+48,"Verify user can sort cards ""from A to Z""",User is able to sort their cards from A to Z,1. User is logged into their Boop account,"1. Tap on the sandwich menu icon on the top left  
+2. Tap on ""Cards"" under ""Settings"" 
+3. Tap on ""From A to Z"" under ""Sort Cards By"" 
+4. Tap ""Back"" on the top left corner ",The learning cards should be listed in alphabetical order; from A to Z,,,,Paper,Cards
+49,"Verify the ""Country"" can be changed ",User can change the Country on their profile,1. User is logged into their Boop account,"1. Tap on the sandwich menu icon on the top left 
+2. Tap on ""Profile under ""Settings"" 
+3. Tap on ""Country"" 
+4. Select a Country other than the current one saved; ""United States of America"" to ""Japan""",The new Country selected should update on user's account,,,Bug,Paper,Account
+50,Verify user is able to Suscribe to a Monthly Subscription Plan,User has the option to subscribe monthly,1. User is logged into their Boop account,"1. Tap on the sandwich menu icon on the top left corner 
+2. Tap ""Subscription "" 
+3. Select ""Subscribe Monthly""
+4. Complete purchase ",User is subscribed to a Monthly Subscription Plan,,,,Paper,Subscription
+51,Verify user is able to Suscribe to an Annual Subscription Plan,User has the option to subscribe annually,1. User is logged into their Boop account,"1. Tap on the sandwich menu icon on the top left corner 
+2. Tap ""Subscription "" 
+3. Select ""Subscribe Annual""
+4. Complete purchase",User is subscribed to an Annual Subscription Plan,,,,Paper,Subscription
+52,"Verify ""Terms of use"" link directs user to the ""Terms and Conditions of Service"" information page",User is able to overlook the Terms and Conditions of the app,1. User is logged into their Boop account,"1. Tap on the sandwich menu icon on the top left corner
+2. Tap on ""Subscription""
+3. Scroll down and tap link ""Terms of use"" under the ""Subscribe Annual"" button
+","Directs user to the ""Terms and Conditions of Service"" page ","Successfully directs user to the ""Terms and Conditions of Service"" page ",,,Paper,Customer Support
+53,"Verify ""Privacy policy"" link directs user to the ""Privacy Policy"" information page",User is able to overlook the Privacy Polices of the app,1. User is logged into their Boop account,"1. Tap on the sandwich menu icon on the top left corner
+2. Tap on ""Subscription""
+3. Scroll down and tap link ""Privacy policy"" under the ""Terms of use"" link
+","Directs user to the ""Privacy Policy"" page ","Successfully directs user to the ""Privacy Policy"" page ",,,Paper,Customer Support
+54,"Verify the ""Gender"" radio buttons ""Male"" or ""Female"" are enabled","Allows the user to edit their gender
+","1. User is logged into their Boop account
+2. The ""Language practice"" field is set to ""Yes, I need language practice"" ","1. Tap on the sandwich menu icon on the top left corner
+2. Tap on ""Profile"" under ""Settings""
+3. Toggle with the radio buttons ""Male"" or ""Female"" under ""Gender"" 
+4. Confirm you are able to tap on the ""Male"" or ""Female"" radio buttons","Radio buttons; ""Male"" or ""Female"" are clickable","Radio buttons; ""Male"" or ""Female"" are clickable
+
+",,LINGD-350,Paper,Account
+55,Verify user can edit the Level of studied language,Allows user to change the level of the language they have studied,1. User is logged into their Boop account,"1. Tap on the sandwich menu icon on the top left corner
+2. Tap on ""Change languages"" under the ""Languages"" section
+3. Tap on ""Language proficiency level"" field
+4. Select the level of studied language to ""Intermediate""
+5. Tap on the ""Continue"" button
+6. Tap ""Yes"" on the pop-up box","The selected level should update and display ""Intermeditate"" on the ""Language proficiency level"" field","The selected level is updated and displays ""Intermeditate"" on the ""Language proficiency level"" field
+",,,Paper,Account
+56,Verify that user can delete the account,The user may not wish to continue using the service or the users needs for the service have been met.,"The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner
+3. Navigate to the ""Settings"" header 
+4. Tap the ""Profile"" Icon 
+5. Scroll down towards the buttom of the screen 
+6. Tap the red ""Delete Account"" button
+7. A confirmation message will appear
+8. Tap the ""Yes"" option
+9. User will automatically be redirected to the ""Login"" Homescreen
+10. Navigate to the ""Email"" and ""Password"" fields and enter in registered account information for the deleted account
+11. User will not be able to sign-in successfully ",The user is able to delete the account.,The user is able to delete the account.,Pass,,Paper,Account
+57,Verify that user can sign-in,The user will need to sign-in to access their account information and retrieve needed services.,"The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Open the Ligocard application 
+2. Enter in users registered email address, within the ""Email"" field 
+3. Enter in users registered password, within the ""Password"" field 
+4. Tap the blue ""Sign-in"" button",The user is able to sign-in successfully when all criteria are met.,The user is able to sign-in successfully when all criteria are met.,Pass,,Paper,Login
+58,Verify that user can log-out,The user will need to log-out of their account once they are finished utilizing the applications services.,"The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Settings"" header 
+4. Tap the ""Profile"" Icon 
+5. Navigate to the button of the screen 
+6. Tap the blue ""Log Out"" button
+7. A Confirmation message will appear 
+8. Tap the ""Yes"" button",The user is able to log-out successfully.,The user is able to log-out successfully.,Pass,,Paper,Login
+59,"Verify that user receives a ""Verify your email address"" email notification after successfully creating an account",The User should receive a confirmation communication regarding their newly registered account within the application.,"The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Open the Boop application
+2. Tap the ""Create an Account"" button
+3. Enter in users testing credentials or create a ""First Name"", ""Last Name"" and ""Email address""
+4. Navigate to the ""Password"" field
+5. Create a Password
+6. Confirm Password by re-entering
+7. Tap the blue ""Sign-up"" button
+8. User is automatically redirected into the applications homepage
+9. User will receive a ""Verify your email address"" email to the email address on file","The user receives a ""Verify your email address"" email notification after successfully creating an account. ","The user receives a ""Verify your email address"" email notification after successfully creating an account.",Pass,,Paper,New Account
+60,Verify that user can change the password,The user may need to update their password due to various reasons.,"The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Settings"" header 
+4. Tap the ""Profile"" Icon 
+5. Scroll down towards the bottom of the screen
+6. Tap the blue ""Change Password"" button
+7. Enter in a new password
+8. Re-enter the new password 
+9. Tap the blue ""Save Changes"" button",The user is able to change the password.,The user is able to change the password.,Pass,,Paper,Account
+61,"Verify that the ""Profile"" button redirects user to the ""Profile"" page","When the ""Profile"" button is clicked the user should be redirected to the. desired location within the application. ","The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Settings"" header 
+4. Tap the ""Profile"" Icon 
+5. User is redirected to the ""Profile"" Page","When user taps the ""Profile"" button, the user is redirected to the ""Profile"" page.","When user taps the ""Profile"" button, the user is redirected to the ""Profile"" page.",Pass,,Bubbles,Navigation
+62,"Verify that user can ""Add"" a new profile avatar",The user may wish to add their photo to their profile for various reasons.,"The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Camera"" Icon 
+4. Tap the ""Camera"" Icon 
+5. Tap the first option ""Galery"" 
+6. Select a photograph from your mobile gallery 
+7. Crop photograph as desired 
+8.Tap the ""Choose"" button 
+9. A confirmation message will appear, select ""Keep current selection"" 
+10. Profile avatar will automatically update",The user is able to add a new profile avatar.,The user is able to add a new profile avatar.,Pass,,Bubbles,Account
+63,"Verify that user can edit ""First Name""","The user may have entered their name incorrectly, the user may now wish to go by their ""preferred"" name or the user may have changed their legal name.","The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Settings"" header 
+4. Tap the ""Profile"" Icon 
+5. Navigate to the field titled ""First Name"" 
+6. Tap the ""First Name"" field 
+7. Type in a new first name of your choice 
+8. Tap the ""Save Changes"" button","The user is able to edit the ""First Name"" field. ","The user is able to edit the ""First Name"" field.",Pass,,Bubbles,Account
+64,"Verify that user can edit ""Last Name""",The user may have entered their name incorrectly or recently gotten married/divorced.,"The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Settings"" header 
+4. Tap the ""Profile"" Icon 
+5. Navigate to the field titled ""Last Name"" 
+6. Tap the ""Last Name"" field 
+7. Type in a new last name of your choice 
+8. Tap the ""Save Changes"" button","The user is able to edit the ""Last Name"" field. ","The user is able to edit the ""Last Name"" field.",Pass,,Bubbles,Account
+65,"Verify that user can update ""Language Proficiency"" status","As the user is learning, their language proficiency will grow, deeming a change in status.","The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Settings"" header 
+4. Tap the ""Profile"" Icon 
+5. Navigate to the field titled ""Language Proficiency"" 
+6. Tap the ""Language Proficiency"" field 
+7. Select a new proficiency level 
+8. The ""Language Proficiency"" field will automatically update","The user is able to update the ""Language Proficiency"" status. ","The user is able to update the ""Language Proficiency"" status.",Pass,,Bubbles,Account
+66,Verify that user can modify a profile avatar,The user may want to update their original profile photo.,"The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Camera"" Icon 
+4. Tap the ""Camera"" Icon 
+5. Tap the first option ""Galery"" 
+6. Select a photograph from your mobile gallery 
+7. Crop photograph as desired 
+8.Tap the ""Choose"" button 
+9. A confirmation message will appear, select ""Keep current selection"" 
+10. The profile avatar will automatically update",The user is able to modify the original profile avatar.,The user is able to modify the original profile avatar.,Pass,,Bubbles,Account
+67,Verify that user receives a RED error message when entering an incomplete email address domain,The user may inadvertently enter incorrect information into the field and need an alert to notify them of this action.,"The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Settings"" header 
+4. Tap the ""Profile"" Icon 5. Navigate to the field titled ""Email"" 
+6. Tap the ""Email"" field 
+7. Delete email domain (.com, .net, .org, etc.)
+8. Tap ""Save"" 
+","The user receives a RED ""This email address is invalid"" error message, when entering an email address with an incomplete email domain.","The user receives a RED ""This email address is invalid"" error message, when entering an email address with an incomplete email domain.",Pass,,Bubbles,Login
+68,"Verify that user is redirected to the subscription options page after tapping the ""Subscription"" button","When the user taps the ""Subscription"" icon the user should be automatically routed to the appropriate selection of their choice. ","The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Subscription"" header 
+4. Tap the ""Subscription"" button 
+5. Verify that subscription options are listed","The user is redirected to the subscription options page after tapping the ""Subscription"" button.","The user is redirected to the subscription options page after tapping the ""Subscription"" button.",Pass,,Bubbles,Navigation
+69,"Verify that user cannot change the ""Current account type""",The users account type should be coordinated with the user's subscription status.,"The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Settings"" header 
+4. Tap the ""Profile"" Icon 
+5. Navigate to the field titled ""Current account type"" 
+6. Tap the ""Current account type"" field ","The user cannot change the ""Current account type.","The user cannot change the ""Current account type.",Pass,,Bubbles,Account
+70,"Verify that the word ""Gallery"" is spelled correctly",All words within the mobile application should be spelled correctly.,"The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Camera"" Icon 
+4. Tap the ""Camera"" Icon 
+5. Check the spelling of the first option listed","The word ""Gallery"" is spelled correctly.","The word ""Gallery"" is spelled incorrectly. Listed as ""Galery""",Fail,LINGD-347,Bubbles,General UI
+71,"Verify that user receives a RED error message when leaving the ""Intro (Optional)"" Field blank",The user should receive an error message when leaving a required field blank.,"The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Settings"" header 
+4. Tap the ""Profile"" Icon 
+5. Navigate to the field titled ""Language Practice"" 
+6. When the pop-up Menu appears select the first option ""Yes, I need language practice""
+7. Scroll down to the ""Intro (Optional)"" Field
+8. Tap the ""Into (Optional)"" field
+9. Leave the field blank
+10. Tap the blue ""Save Changes"" button","The user receives a RED ""This field is required"" error message when leaving the ""Intro (optional)"" entry field blank.","The user receives a RED ""This field is required"" error message when leaving the Intro (optional) entry field blank. However, it is stated within the application that this field is ""optional"", A JIRA Bug Report has been recorded.",Pass,LINGD-358,Bubbles,New Account
+72,Verify that the users Date of Birth (DOB) can be changed,"The user may have inadvertently entered the incorrect date of birth. Also, Application overseers may want demographic information for research and marketing purposes, therefore users should have the opportunity to fix incorrect information. ","The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Settings"" header 
+4. Tap the ""Profile"" Icon 
+5. Navigate to the field titled ""Date of Birth"" 
+6. Tap the ""Date of Birth"" field 
+7. Select any month, date, and year
+8. Tap ""Save""
+9. Tap the ""Save Changes"" button",The user can change the Date of Birth.,The user can change the Date of Birth.,Pass,,Bubbles,Account
+73,"Verify that the ""First Name"" field is required",The user should be required to enter a first name.,"The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Settings"" header 
+4. Tap the ""Profile"" Icon 
+5. Navigate to the field titled ""First Name"" 
+6. Tap the ""First Name"" field 
+7. Delete users entire first name 
+8. Tap the ""Save Changes"" button","The user will receive a RED ""This field is required"" Error message if the""First Name"" field is left blank.","The user will receive a RED ""This field is required"" Error message if the""First Name"" field is left blank.",Pass,,Bubbles,New Account
+74,"Verify that the ""Date of Birth"", ""Gender"", ""Intro (Optional)"", Profession (Optional)"" and Areas of interest and hobby (Optional)"" fields are automatically added to the user's ""Profile"" when selecting the ""Yes, I need language practice"" option",The listed field additions are apart of the synchronicity of the application.,"The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop 
+2. Tap the ""Hamburger"" icon in the top upper left corner 
+3. Navigate to the ""Settings"" header 
+4. Tap the ""Profile"" Icon 
+5. Navigate to the field titled ""Language Practice"" 
+6. When the pop-up Menu appears select the first option ""Yes, I need language practice"" 
+7. The users ""Profile"" page will automatically update to include the ""Date of Birth"", ""Gender"", ""Intro (Optional)"", Profession (Optional)"" and Areas of interest and hobby (Optional)"" fields at the button of the page","The ""Date of Birth"", ""Gender"", ""Intro (Optional)"", Profession (Optional)"" and Areas of interest and hobby (Optional)"" fields are automatically added to the users ""Profile"" when the ""Yes, I need language practice"" option is selected.","The ""Date of Birth"", ""Gender"", ""Intro (Optional)"", Profession (Optional)"" and Areas of interest and hobby (Optional)"" fields are automatically added to the users ""Profile"" when the ""Yes, I need language practice"" option is selected.",Pass,,Bubbles,New Account
+75,"Verify that user can modify the ""Country"" field","If the user changes citizenship, this field should be able to be updated.","The Preconditions are mentioned above within the ""Common Additional Info"" Section. ","1. Log-in to Boop
+2. Tap the ""Hamburger"" icon in the top upper left corner
+3. Navigate to the ""Settings"" header
+4. Tap the ""Profile"" Icon
+5. Navigate to the field titled ""Country"" 
+6.  Tap the ""Country"" field
+","The user is able to modify the ""Country"" field from the ""Profile"" Page.","The user is not able to modify the ""Country"" field.",Fail,LINGD-348,Bubbles,Account
+76,"Verify if the icon ""Add Profile Photo"" for Profile is clicable.",If the user be able to upload the photo,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner. 
+2. In section ""Settings"" tap on the icon ""Profile"". 
+3. In the right upper corner tap on icon ""Add profile photo""",The user will be able to choose options to add the profile photo,The user is able to upload the profile photo,"""PASS""",,Bubbles,Account
+77,Verify if the user can choose Profile photo from his Gallery.,,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner. 
+2. In section ""Settings"" tap on the icon ""Profile"". 
+3. In the right upper corner tap on icon ""Add profile photo"".
+4. Tap on field ""Galery"" and choose the photo.",The user will be able to upload the profile photo from Galery.,The user is able to upload the profile photo from Galery,"""PASS""",,Bubbles,Account
+78,Verify if the user can set Profile photo using phone camera.,,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner. 
+2. In section ""Settings"" tap on the icon ""Profile"". 
+3. In the right upper corner tap on icon ""Add profile photo"".
+4. Tap on field ""Take a photo"".
+5. Take a new photo and press ""Use Photo"".",The user will be able to upload the profile photo with phone camera.,The user is able to upload the profile photo using phone camera,"""PASS""",,Bubbles,Account
+79,"Verify if the user can add numbers to the field ""First Name""",,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. In section ""Settings"" tap on the icon ""Profile"".
+3. Fill in filed ""First Name"" any numbers and tap ""Save Changes""",The user will be able to add numbers,"The user is able to add numbers to the field ""First Name""","""PASS""",,Bubbles,Account
+80,Verify if the user can change Email,,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. In section ""Settings"" tap on the icon ""Profile"".
+3. Tap on field ""Email"".
+4. Put new email address and tap on button ""Save Changes"".",The user will be able successfully change email adress.,The user is able successfully change email adress.,"""PASS""",,Bubbles,Account
+81,Verify if the user can change Country,,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. In section ""Settings"" tap on the icon ""Profile"".
+3. Tap on field ""Country "".
+",The user will be able to change Country.,The user is able to change Country.,FAIL,"LINGD-311, LINGD-355, LINGD-348, LINGD-354",Spot,Account
+82,Verify if the user can change the level of studied language for Beginner,,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. In section ""Languages"" tap on the icon ""Change languages"".
+3. Tap on field ""Language proficiency practice"" change level for Begginer and press ""Continue"".
+",The user will be able to change level for Begginer.,The user is able to change level for Begginer.,"""PASS""",,Spot,Account
+83,Verify if the user can change password,,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. In section ""Settings"" tap on the icon ""Profile"".
+3. Tap on the button ""Change Password"".
+4. Put New password, confirm it and save changes.",The user will be able successfully change password.,The user is able successfully change password.,"""PASS""",,Spot,Login
+84,"Verify if button ""Subscribtions"" in section ""Profile"" is clicable ",,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. In section ""Settings"" tap on the icon ""Profile"".
+3. Scroll down to the button ""Subscribtions"" and tap it.",Button is clicable and displays to the user subscriptions.,Button is clicable and displays to the user subscriptions.,"""PASS""",,Spot,Navigation
+85,"Verify if the user in the field ""Last Name"" can enter only 1 letter",,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. In section ""Settings"" tap on the icon ""Profile"".
+3. In field ""Last Name"" enter one letter and tap ""Save Changes"".",The user's last name can consist only 1 letter,The user's last name can consist only 1 letter,"""PASS""",,Spot,New Account
+86,"Verify if the button ""Search"" is clicable ",,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. In the upper right corner tap on icon ""Search""","Clicking on the icon ""Search"" opens the serch box.","Clicking on the icon ""Search"" opens the serch box.","""PASS""",,Spot,Navigation
+87,"Verify if the button ""Cards"" will open screen with Cards settings ",,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. In section ""Settings"" tap on the icon ""Cards"".
+",Cards settings will displays to the user.,Cards settings are displayed to the user.,"""PASS""",,Spot,Navigation
+88,"Verify if button ""Turn on/off auto pronunciation"" in section ""Card settings"" is working ",,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. In section ""Settings"" tap on the icon ""Cards"".
+3. Press ""Auto pronunciation"" ON.
+4. Press ""Auto pronunciation "" OFF.
+","If Auto pronunciation is ON, clicking on a word card will be played automatically. 
+If Auto pronunciation is OFF, clicking on a word card will not be played.","Button ""Turn on/off auto pronunciation"" in section ""Card settings"" is working ","""PASS""",,Spot,Cards
+89,Verify if the user will be able sort cards from A to Z,,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. In section ""Settings"" tap on the icon ""Cards"".
+3. Press set sort cards from A to Z.
+",All word cards will be displayed in alphabetical order.,All word cards are displayed in alphabetical order.,"""PASS""",,Spot,Cards
+90,Verify if the user will be able sort cards from Z to A,,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. In section ""Settings"" tap on the icon ""Cards"".
+3. Press set sort cards from Z to A.
+",All word cards will be displayed in reverse alphabetical order.,All word cards are displayed in reverse alphabetical order.,"""PASS""",,Spot,Cards
+91,Verify if the user will be able change Native language for Croatian,,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. In section ""Languages"" tap on the icon ""Change languages"".
+3. Tap on the field ""Native language"". 
+4. Set Native language Croatian and press ""Continue"".
+",The user will successfully changed Native language.,The user can successfully changed Native language.,"""PASS""",,Spot,Account
+92,Verify if the user will be able change studied language to Chinese,,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. In section ""Languages"" tap on the icon ""Change languages"".
+3. Tap on the field ""Studied language"". 
+4. Set Studied language Chinese and press ""Continue"".
+",The user will successfully changed Studied language to Chinese,The user can successfully changed Studied language to Chinese,"""PASS""",,Spot,Account
+93,"Verify if button ""Subscribe Montly"" displayed pricing and the opportunity to subscribe ",,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the sandwich menu in the left upper corner.
+2. Tap on the icon ""Subscription"".
+3. Tap on the button ""Subscribe Monthly"".
+",Information with monthly subscription cost will be displayed to the user with subscription option.,Information with monthly subscription cost is displayed to the user with subscription option.,"""PASS""",,Spot,Subscription
+94,"Verify if button ""Subscribe Annual"" displayed pricing and the opportunity to subscribe ",,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. Tap on the icon ""Subscription"".
+3. Tap on the button ""Subscribe Annual"".
+",Information with Annual subscription cost will be displayed to the user with subscription option.,Information with Annual subscription is displayed to the user with subscription option.,"""PASS""",,Spot,Subscription
+95,"Verify that link ""Terms of use"" will open and provide the necessary information ",,"1.The app Boop is downloaded. 
+2. The user is already registered and signed in.","1. Tap on the ""Sandwich"" menu in the left upper corner.
+2. Tap on the icon ""Subscription"".
+3. Scroll down and tap on link ""Terms of use"" under button ""Subscribe Annual""
+",Page will open with Terms and Conditions of Service,"Page is open with ""Terms and Conditions of Service"" ","""PASS""",,Spot,Customer Support
+96,"Verify that you can edit your First name by tapping on that field under your ""Profile"".",Allows the user to change or modify their first name as they wish,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app
+2. On the top left hand corner of your screen, please tap on the Sandwich icon
+3. Under the ""Settings:"" section, please tap on ""Profile"" 
+4. On the first line, please tap on the ""First name"" field","Tapping on the ""First name"" field, should take you to another screen in which allows you to edit your First name.","Tapping on the ""First name"" field takes me to another screen and allows me to edit my first name.",PASS,,Spot,Account
+97,"Verify that by tapping on your picture profile under ""Profile"" setting, you have the options to either select from ""Gallery"" or ""Take a photo"".",Gives the user an option to upload a profile picture from either their mobile gallery or take a picture,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app
+2. On the top left hand corner of your screen, please tap on the Sandwich icon
+3. Under the ""Settings:"" section, please tap on ""Profile"" 
+4. At the top of your screen, please tap on the profile picture camera 
+",Tapping on the profile picture camera should pull up two specific options at the bottom of your screen to either upload an image from your Gallery or Take a photo.,Tapping on my profile picture asks me if I would like to either take a photo or upload an image from my gallery.,PASS,,Spot,Account
+98,"Verify that you are able to edit your Email address under your ""Profile"" setting",Allows the user the freedom to change their existing email address tied to their Boop account.,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Profile""
+4. On the third field line, please tap on the ""Email"" field
+","Tapping on the ""Email"" field, should take you to another screen that allows you to edit or change your current email address tied to Boop account.","Tapping on the ""Email"" field, does take me to another screen that allows me to edit or change my current email tied to Boop account.",PASS,,Spot,Account
+99,"Verify that you can edit your ""Date of birth"" under your ""Profile"" setting",Allows the user to edit their date of birth at anytime,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Profile""
+4. Scroll down to the bottom of your screen
+5. Please find and tap on the ""Date of birth"" field ","Tapping on the ""Date of birth"" field should take you to another screen that allows you to enter your date of birth.","Tapping on the ""Date of birth"" field does take me to another screen in which allows me to enter or edit my DOB.",PASS,,Spot,Account
+100,"Verify that you are able to edit your ""Language Proficiency"" under your ""Profile"" setting",Allows the user to change the level of studied language at anytime,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Profile"" 
+4. Scroll down to the bottom of your screen
+5. Please find the ""Language proficiency"" field and tap 
+","Tapping on the ""Language proficiency"" field should provide you with options at the bottom to choose from to change the level of studied language you are at.","Tapping on the ""Language proficiency"" field does provide me with options at the bottom to choose from and change the level of studied language.",PASS,,Spot,Account
+101,"Verify that you can change your ""Gender"" under your ""Profile"" setting",Allows the user to fix or change their gender if needed,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Profile"" 
+4. Scroll down to the bottom of your screen
+5. Under the ""Gender"" field, please confirm you are able to edit your gender by tapping between ""Male"" or ""Female"" radio buttons","You should be able to change your gender under the ""Gender"" field if needed between both Male and Female radio buttons ","Attempting to change your gender from either Male to Female or vice versa, gives you an error message that populates and says ""Unauthorized"" ",FAILED,LINGD-351,Foam,Account
+102,"Verify that you can edit the ""Language practice"" field under your ""Profile"" setting",Allows the user the ability to change the language practice option at anytime,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Profile"" 
+4. Scroll down to the bottom of your screen
+5. Please find the ""Language practice"" field and tap","The user should see options to choose form upon tapping on the ""Language practice"" field","I am able to see options to choose from upon tapping on the ""Language practice"" field.",PASS,,Foam,Account
+103,"Verify that you are able to log out of your account upon tapping on the ""LOG OUT"" button under your ""Profile"" setting",Provides another option for the user to log out,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Profile"" 
+4. Scroll down to the bottom of your screen
+5. Please locate and tap on the blue button called ""LOG OUT""","Tapping on the blue ""LOG OUT"" button, should log the user out of their account. ","Tapping on the blue ""LOG OUT"" button does not log me out of my account.",FAILED,LINGD-328,Foam,Login
+104,"Verify that there is a blue ""CHANGE PASSWORD"" button under your ""Profile"" setting",Provides an option for the user to change their Boop password if desired/needed.,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Profile"" 
+4. Scroll down to the bottom of your screen
+5. Please locate the the blue ""CHANGE PASSWORD"" button","The user should be able to find the ""CHANGE PASSWORD"" blue button under their ""Profile"" account.","The blue ""CHANGE PASSWORD"" is visible under my ""Profile"" setting.",PASS,,Foam,Login
+105,"Verify that by tapping on the blue ""SUBSCRIPTION"" button under your ""Profile"" account, a window pops up with subscription options",Provies the user ability to change/restore their subscription option at anytime,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Profile"" 
+4. Scroll down to the bottom of your screen
+5. Please locate and tap on the blue ""SUBSCRIPTION"" button","By tapping on the blue ""SUBSCRIPTION"" button, a window should appear on your screen with options to either change your subscription or even restore it.","Tapping on the blue ""SUBSCRIPTION"" button does populate a window with options to change my current subscription or restore it. ",PASS,,Foam,Navigation
+106,"Verify that you can turn on/off auto pronunciation via toggle under ""Card"" settings",Allows the user to enable or disable this feature according to their preference,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Cards""
+4. Under ""TURN ON/OFF AUTO PRONUNCIATION:"" setting, please slide the ""Auto pronunciation"" toggle to the opposite of what you already have set.","Sliding the toggle of ""Auto pronunciation"", should enable or disable (depending what way you slide) this feature. ","Sliding the toggle ""Auto pronunciation"" does enable and even disable the feature.",PASS,,Foam,Cards
+107,"Verify that by tapping to sort your cards in a ""Random order"" a green checkmark appears on the right hand corner",The green checkmark confirms to the user that Boop has saved this preference and will sort their cards randomly,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Cards""
+4. A little towards the bottom of your screen, please locate the field that states ""SORT CARDS BY:""
+5. Please tap on the option that states ""Random order"" from this list","Tapping on the ""Random order"" under ""SORT CARDS BY:"", should sort their language cards in a random order for the user","Tapping on the ""Random order"" option under ""SORT CARDS BY:"" does appear to sort the language cards in a random order",PASS,,Foam,Cards
+108,"Verify that you can see the ""<Back"" option on the top left hand corner of your screen under ""Card settings""","Allows the user to go back if they are finished viewing or making changes on the ""Card settings"" screen","1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Cards""
+4. Confirm you see the white text ""<Back"" option located on the top left-hand corner of your screen","Seeing and selecting the ""<Back"" feature will allow the user to go back should they finish viewing or making changes under the ""Card settings""","Seeing and selecting the ""<Back"" feature will allow me to go back.",PASS,,Foam,Navigation
+109,"Verify that there is a blue ""RESTORE DEFAULT VALUE"" button located at the bottom of the screen under ""Player Settings""","Provides the user an option to restore their settings to default value for the ""Player setting"" if desired","1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Player""
+4. At the bottom of your screen, please locate the blue ""RESTORE DEFAULT VALUES"" button","There should be a ""RESTORE DEFAULT VALUE"" button at the bottom of the screen under the ""Player Settings""","There is a ""RESTORE DEFAULT VALUE"" button at the bottom of the screen under the ""Player Settings""",PASS,,Foam,Settings
+110,"Verify that the blue ""RESTORE DEFAULT VALUE"" located button at the bottom of the screen under ""Player Settings"" actually works","Allows the user to actually restore their default settings for their ""Player Setting"" if desired.","1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Player""
+4. Please go through each section of this setting and change their value by tapping on each field and viewing their options
+4. Once completed, at the bottom of your screen, please locate and tap the blue ""RESTORE DEFAULT VALUES"" button","Tapping on the blue ""RESTORE DEFAULT VALUE"" button at the bottom of the ""Player Settings"" setting, should default the user back to its original defaulted values that Boop had prior to you changing the values","Tapping on the blue ""RESTORE DEFAULT VALUE"" button at the bottom of the ""Player Settings"" setting, does default my settings back to its original defaulted values that Boop had prior to changing the values",PASS,,Foam,Settings
+111,"Verify that the ""Amount of exercies per day"" under the ""Table of exercises setting"" only allows up to 3 times a day",,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Table exercises""
+4. On the second line, please tap on the ""Amount of exercies per day"" option
+5. A small window should come up allowing you to slide up or down between 1-3 and should only allow you to go up to 3 for this setting ","The ""Amount of exercises per day"" setting should only allow you to choose no more than 3 times per day","The ""Amount of exercises per day"" setting only allow me to choose up to 3 times per day",PASS,,Foam,Settings
+112,"Verify that the ""Notifications"" settings are toggle options only",,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Notifications""
+4. Please confirm that all the options for this setting are toggle options only","The ""Notifications"" settings should only allow the user to enable or disable via toggle method and nothing else","The ""Notifications"" settings only allows me to enable or disable via toggle method and nothing else",PASS,,Foam,Notifications
+113,"Verify that by tapping on the ""Current account type"" field under ""Profile"" settings, it does not do anything",This feature should only be a view option and not an option to change,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Profile""
+4. Towards the middle section of your screen, please locate and attempt to tap on the field that states ""Current account type""",Attempting to tap on this field should not do anything as this is a view only field.,Tapping on this field does not do anything,PASS,,Foam,Navigation
+114,"Verify that by tapping on the red ""DELETE ACCOUNT"" button under ""Profile"" settings, successfully deletes your account",This option should be accessible and doable if desired by user,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Profile""
+4. Please scroll down to the bottom of your screen
+5. Please tap on the red ""DELETE ACCOUNT"" button","Tapping on the red ""DELETE ACCOUNT"" button should successully delete the users account.","Tapping on the red ""DELETE ACCOUNT"" button only loads for me without timing out and does not delete my account. ",FAILED,LINGD-352,Foam,Account
+115,"Verify that your mobile keyboard automatically appears at the bottom when you tap on the ""Intro (Optional)"" field under ""Profile"" setting",The mobile keyboard should appear the moment the user taps on this Intro field so the user can complete this field as desired,"1. Install the Boop mobile app
+2. Create an account","1. Open the Boop mobile app 
+2. On the top left hand corner of your screen, please tap on the Sandwich icon 
+3. Under the ""Settings:"" section, please tap on ""Profile""
+4. Scroll down towards the bottom of the screen
+5. Please tap on the field that reads ""Intro (Optional)""",Tapping on this field should auto-populate the users mobile keyboard at the bottom of their screen so the user can tap in and fill out this part of the field.,Tapping on this field does auto-populate the my mobile keyboard at the bottom of my screen.,PASS,,Foam,Account
+116,Verify user is able to update thier first name in profile section,Allows user to update/correct name as it was previously entered,User has First name already entered,"1. Tap in field for ""First name""
+2. Type changes to name
+3. Swipe down
+4. Tap ""Save Changes"" button",User should see first name field updated,User sees first name field updated,Pass,,Foam,Account
+117,Verify user is able to update their last name in profile settings,Allows user to update/correct name as it was previously entered,User has Last name already entered,"1. Tap in field for ""Last name""
+2. Type changes to name
+3. Swipe down
+4. Tap ""Save Changes"" button",User should see last name field updated,User sees last name field updated,Pass,,Foam,Account
+118,Verify user is able to change day of DOB in profile settings,Allows user to make corrections if needed,User has DOB already entered,"1. Tap Day field of DOB
+2.Swipe up/down and tap desired number
+3. Swipe down
+4. Tap ""Save Changes"" button",User should see day of DOB updated,Day of DOB was updated,Pass,,Foam,Account
+119,Verify user is able to change month of DOB in profile settings,Allows user to make corrections if needed,User has DOB already entered,"1. Tap Month field of DOB
+2.Swipe up/down and tap desired number
+3. Swipe down
+4. Tap ""Save Changes"" button",User should see month of DOB updated,Month of DOB was updated,Pass,,Foam,Account
+120,Verify user is able to change year of DOB in profile settings,Allows user to make corrections if needed,User has DOB already entered,"1. Tap Year field of DOB
+2.Swipe up/down and tap desired number
+3. Swipe down
+4. Tap ""Save Changes"" button",User should see year or DOB updated,Year of DOB was updated,Pass,,Foam,Account
+121,Verify user is able to update profile photo from gallery photos while in profile settings,Allows user to update photo with previously taken photo,User has photo saved to Gallery,"1. Tap camera icon
+2. Tap on Gallery option, select folder if necessary 
+3. Scroll through Gallery to desired photo and tap 
+4. Adjust frame as desired and tap Crop",User should see picture updated as selected from gallery,Profile picture updated,Pass,,Foam,Account
+122,Verify user is able to update profile photo using camera function while in profile settings,Allows user to update photo taken in the moment,,"1. Tap camera icon
+2. Tap Camera option
+3. Take photo and tap OK",User should see picture update as picture just taken from camera,Profile picture did not update,Fail,LINGD-301,Foam,Account
+123,Verify user is able to update their email address in profile settings,Allows user to change email if they want to use a different email address,,"1. Tap email field 
+2. Enter email address 
+3. Swipe down
+4. Tap ""Save Changes"" button",User should see that email was updated,Email was updated,Pass,,Foam,Account
+124,Verify user is able to change country in profile settings,Allows user to change if they have moved to a new country,User has Country already entered,"1. Tap Country field 
+2. Delete country currently listed
+3. Swipe to desired country, or type country name
+4. Swipe down
+5. Tap ""Save Changes""",User sees that Country is updated,Country was updated,Pass,,Foam,Account
+125,Verify user is able to update profession in profile settings,Allows user to make changes if they change professions,,"1. Tap profession field
+2. Enter updated information
+3. Swipe down
+4. Tap ""Save Changes"" button",User see that profession changes,Profession updated,Pass,,Foam,Account
+126,Verify user is able to update Interests and hobbies in profile settings,Allows user to update as interests/hobbies change,,"1. Tap Interests and hobbies field
+2. Enter updated information 
+3. Swipe down 
+4. Tap ""Save Changes"" button",User sees that interests/hobbies are updated,Interests and hobbies updated,Pass,,Foam,Account
+127,Verify user is able to update Intro in profile settings,Allows user to change what others are able to read about them,,"1. Tap Intro field
+2. Ender updated information
+3. Swipe down
+4. Tap ""Save Changes"" button ",User sees that Intro is updated,Intro is updated,Pass,,Salsa,Account
+128,Verify user is able to change password in profile settings,Allows user to change password to keep account secure,,"1. Swipe down
+2. Tap Change Password button
+3. Enter new password in New password field
+4. Enter same password in Confirm password field
+5. Tap Save Changes button",User sees confirmation that password is updated,Confrimed password was changed,Pass,,Salsa,Account
+129,Verify first name in profile settings can not be deleted and then left blank in profile settings,To confirm for other users who they might be talking to in chat options and for database info to be complete,User has name entered in first name field in on Profile,"1. Tap first name field
+2.Delete first name and then leave first name field blank
+3. Scroll down
+4.Tap Save Changes button
+",User receives error message,No error recieved that first name is required,Fail,LINGD-356,Salsa,Account
+130,Verify user is unable to change name to 100+ characters in last name field of profile settings,To prevent overload of database,User has name entered in last name field on Profile,"1. Tap last name field
+2. Delete current contents
+3. Enter 100+ characters into last name field
+4. Scroll down
+5. Tap Save Changes button",User receives error message,No error recieved that last name exceeds character limit,Fail,LINGD-357,Salsa,Account
+131,Verify user is able to change level of language in profile settings,Allows users to adjust as language skills improve or regress,User has level of Language already selected,"1. Swipe down
+2. Tap + next to My languages
+3. Tap drop down arrow under Level
+4. Select a different level that previously selected
+5. Tap Save Changes button",User sees that level has been updated,Language level is updated,Pass,,Salsa,Account
+132,Verify user is able to add Teaching services in profile settings,Allows users to access great amount of app content,,"1. Swipe down
+2. Tap + next to My services
+3. Tap box next to Teaching services
+4. Tap and enter number in USD/hour field
+5. Tap and enter number Teaching experience/years field
+6. Tap choose language and swipe to select from list or type language
+7. Tap Save Changes button",User see that teaching services is checked,Teaching serivies is checked,Pass,,Salsa,Account
+133,Verify user is able to change number in USD/hour for teaching services in profile settings,Allows users to adjust amount they are requesting for payment,User already has number entered into field,"1. Swipe down
+2. Tap + next to My Services
+3. Tap USD/hour field in Teaching services section and enter updated number
+4. Tap Save Changes button",User sees imputed number present in USD/hour box,Number in USD/hour box is updated,Pass,,Salsa,Account
+134,Verify user is able to change number in Teaching experience/years for teaching services in profile settings,Allows users to correctly report how much experience they have,User already has number entered into field,"1. Swipe down
+2. Tap + next to My Services
+3. Tap Teaching experience/years drop down arrow under in Teaching Services section
+4. Tap on number
+5. Tap Save Changes",User sees imputed number present in experience/years box,Number is experience/years in updated,Pass,,Salsa,Account
+135,Verify that profession field is optional,Allows user to choose if they want to share profession or not,,"1. Leave Profession field blank
+2. Continue to progress to new field tapping on interests and hobbies field",User is able to continue with the field left blank,User is able to continue with the field left blank,Pass,,Salsa,Account
+136,"Verify user is unable to leave ""USD/hour"" field blank when adding Teaching Services to My Services",Allows others to confirm price for accessing services,,"1.Swipe down
+2.Tap + next to My Services
+3.Tap box next to Teaching services
+4. Leave USD/hour field blank
+5. Tap Teaching experience/years field and tap number from list
+6. Tap Choose language field and swipe to choose from list or type language 
+7. Tap Save Changes button",User receives error message that all fields are required,User receives error message that all fields are required,Pass,,Salsa,Account

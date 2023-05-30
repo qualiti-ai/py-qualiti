@@ -13,8 +13,10 @@
 ## Requirements
 
 - 🐍 Python `3.8.12` or higher
-- 🔑 Access to OpenAI via API Key
 - 📦 [Poetry](https://python-poetry.org/) as package manager if you are contributing
+- Having access to both allows you to use all features and examples, so note which you'll need:
+  - 🔑 Access to [OpenAI](https://openai.com) via API Key
+  - 🔑 Access to [🤗 HuggingFace](https://huggingface.co) via Access Token
 
 ## Installation
 
@@ -41,6 +43,16 @@ This project currently supports these models and providers, but you must have ac
     ```
 
     > 💡 You can also use a `.env` file or manage Environment Variables your own way!
+
+    **🤗 HuggingFace**
+
+    ---
+
+    Set your `HUGGINGFACE_ACCESS_TOKEN` Environment Variable. You can use the `qualiti set-env` command if needed:
+
+    ```bash
+    qualiti conf set-env HUGGINGFACE_ACCESS_TOKEN <your-access-token>
+    ```
 
 3. Then start using `qualiti` in the CLI or as a package in your project:
 
