@@ -25,7 +25,7 @@ def testids(input_path: Path, inplace: bool = True, model: str = "gpt-3.5-turbo"
     Args:
         input_path: Path to file or directory to be modified.
         inplace: If True, will overwrite each existing file. If False, will save to a new file.
-        model: Specify which model to use. If "bing", use BingChat
+        model: Specify which model to use.
 
     Returns:
         Path to the modified file or directory.
@@ -44,7 +44,7 @@ def testids_to_file(input_path: Path, inplace: bool = True, model: str = "gpt-3.
     Args:
         input_path: Path to file to be modified.
         inplace: If True, will overwrite existing file. If False, will save to a new file.
-        model: Specify which model to use. If "bing", use BingChat
+        model: Specify which model to use.
 
     Returns:
         Path to the modified file.
@@ -84,7 +84,7 @@ def testids_to_directory(input_path: Path, inplace: bool = True, model: str = "g
     Args:
         input_path: Path to directory to be modified.
         inplace: If True, will overwrite each existing file. If False, will save to new files.
-        model: Specify which model to use. If "bing", use BingChat
+        model: Specify which model to use.
 
     Returns:
         Path to the modified directory.

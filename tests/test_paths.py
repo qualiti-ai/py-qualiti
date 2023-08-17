@@ -6,15 +6,6 @@ import typer
 from qualiti import ai, attributer, utils
 
 
-@pytest.mark.asyncio
-async def test_async():
-    response = await ai.get_bing_completion("Tell me a joke", cookies_path="qualiti/cookies.json")
-    assert response is not None
-
-    response = await ai.get_bing_completion("What is the capital of France?")
-    assert response is not None
-
-
 def test_get_all_files_recursively():
     root_dir = Path("examples")
     file_list = utils.get_all_files_from_directory(root_dir)
