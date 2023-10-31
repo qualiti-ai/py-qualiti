@@ -6,6 +6,14 @@ import typer
 from qualiti import ai, attributer, utils
 
 
+def test_attributer():
+    code = Path("examples/StoryView.tsx").read_text()
+    prompt = attributer.TESTID_PROMPT.format(code)
+    completion = ai.get_code(prompt, model="gpt-3.5-turbo")
+    new_code = utils.extract_code_from_completion(completion)
+    assert new_code
+
+
 def test_get_all_files_recursively():
     root_dir = Path("examples")
     file_list = utils.get_all_files_from_directory(root_dir)

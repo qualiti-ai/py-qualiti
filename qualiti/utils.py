@@ -9,10 +9,9 @@ from qualiti import config
 
 def extract_code_from_completion(completion: str, code_block_seperator="```") -> str:
     # ["```", code, "```"] => [1] is just the code
-    completion = completion.split(code_block_seperator)[1]
-    if completion.startswith("\n"):
-        completion = completion[1:]
-    return completion
+    code = completion.split(code_block_seperator)[1]
+    # Remove the language prefix (ie ```jsx) and newline from AI completion
+    return code.split("\n", 1)[1]
 
 
 def get_all_files_from_directory(

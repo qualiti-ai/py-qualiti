@@ -11,7 +11,7 @@ TESTID_PROMPT = """
 
     1. Identify all relevant HTML elements
     2. For each element, add ONLY a unique and helpful `data-testid` attribute if it doesn't already have one
-    3. Do NOT add any comments or docstrings
+    3. Do not add any comments or docstrings
 
     ```
     {0}
