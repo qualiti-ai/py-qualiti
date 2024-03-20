@@ -18,7 +18,7 @@ beautifulsoup4 = "^4.12.2"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
-black = "^23.3.0"
+black = ">=23.3,<25.0"
 poethepoet = "^0.19.0"
 pytest-asyncio = "^0.21.0"
 
